@@ -1,12 +1,15 @@
+{% set description_page = pages|selectattr('slug', 'equalto', 'description')|first %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{ SITENAME }}</title>
+	<meta name="description" content="{{ description_page.title|e }}">
+	<link rel="canonical" href="{{ SITEURL }}/">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="{{ SITENAME }}">
-	<meta property="og:description" content="Characters that EchoVault reports as verified users">
+	<meta property="og:description" content="{{ description_page.title|e }}">
 	<meta property="og:url" content="{{ SITEURL }}/">
 	<meta name="theme-color" content="#f39660">
 	<link rel="stylesheet" href="{{ SITEURL }}/theme/css/base.css">
@@ -24,9 +27,12 @@
 				<a class="share-link" href="https://bsky.app/intent/compose?text={{ (SITEURL ~ '/')|urlencode }}" target="_blank" rel="noopener noreferrer">Bluesky</a>
 			</div>
 		</div>
-		{% for description in pages if description.slug == 'description' %}
-		<div class="site-description">{{ description.content|safe }}</div>
-		{% endfor %}
+		{% if description_page %}
+		<div class="site-description">
+			<h2>{{ description_page.title }}</h2>
+			{{ description_page.content|safe }}
+		</div>
+		{% endif %}
 	</header>
 
 	<main class="roster">

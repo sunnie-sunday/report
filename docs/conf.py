@@ -21,6 +21,7 @@ html_static_path = ['_static']
 html_css_files = ['custom.css']
 html_show_sphinx = False
 html_use_index = False
+html_baseurl = "https://echo-unvaulted.net/docs/"
 
 pygments_style = 'monokai'
 highlight_language = "json"

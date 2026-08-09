@@ -1,10 +1,7 @@
-Site Description
-################
+Characters that EchoVault reports as verified users
+###################################################
 
 :slug: description
-
-Characters that EchoVault reports as verified users
----------------------------------------------------
 
 To be verified, the owner of that character has to install the Echo plugin
 (successor\  of\  PlayerScope\  and\  Memoria) then add it's registration code on their Lodestone profile.
