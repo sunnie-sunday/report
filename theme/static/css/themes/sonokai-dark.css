@@ -1,0 +1,24 @@
+/* Sonokai, default style (sainnhe/sonokai) */
+:root {
+  --bg: #2c2e34;          /* bg0 */
+  --fg: #e2e2e3;           /* fg */
+  --muted: #7f8490;        /* grey */
+  --border: #3b3e48;       /* bg3 */
+  --accent: #9ed072;       /* green */
+  --card-bg: #33353f;      /* bg1 */
+  --card-bg-hover: #363944; /* bg2 */
+
+  /* Sonokai has no official light variant, so the accordion borrows
+     GitHub's light source-code theme instead (primer/primitives). */
+  --bio-bg: #ffffff;       /* canvas.default */
+  --bio-fg: #1f2328;        /* fg.default */
+  --bio-muted: #656d76;     /* fg.muted */
+  --bio-border: #d0d7de;    /* border.default */
+
+  /* Matches the Sphinx docs' heading, link, and inline-code colors
+     (docs/_static/custom.css). */
+  --title-fg: #f39660;     /* orange */
+  --link: #76cce0;         /* blue */
+  --code-bg: #3b3e48;      /* bg3 */
+  --code-fg: #e2e2e3;      /* fg */
+}

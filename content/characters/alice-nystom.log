@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Tue, 04 Aug 2026 16:36:51 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=235,cfOrigin;dur=456
+
+{
+	"uploaderId": "6dd93dab-a50b-4ca0-9873-b6874b6bfacc",
+	"apiKey": "eak_e38539fa56a41b7dedc6f27128f7b0218c9131d2034a33e72899a6f29622948d",
+	"hmacSecret": "IKjbPWowUALo2XOIJ17dui+qD2ksZNASPgbbKapYr1g="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 6dd93dab-a50b-4ca0-9873-b6874b6bfacc
+X-Echo-Timestamp: 1785861414
+X-Echo-Nonce: b3c49df8cd314920bd0953d8e300d64b
+X-Echo-Signature: 3ad339022fb0cb4bc580de89c7b94989dbe5030b7b0eff1da7dfd7191474fd0e
+Content-Length: 137
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "42126460",
+	"characterName": "Alice Nystom",
+	"homeWorldName": "Excalibur",
+	"contentId": "18014498568885660"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Tue, 04 Aug 2026 16:36:54 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=230,cfOrigin;dur=106
+
+{
+	"error": "already_claimed"
+}

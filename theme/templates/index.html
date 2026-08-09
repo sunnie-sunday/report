@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ SITENAME }}</title>
+	<link rel="stylesheet" href="{{ SITEURL }}/theme/css/base.css">
+	<link rel="stylesheet" href="{{ SITEURL }}/theme/css/themes/{{ COLOR_THEME }}.css">
+	<link rel="stylesheet" href="{{ SITEURL }}/theme/css/validator.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="site-header-top">
+			<h1>{{ SITENAME }}</h1>
+			<div class="share-links">
+				<span class="share-label">Share:</span>
+				<a class="share-link" href="https://twitter.com/intent/tweet?url={{ (SITEURL ~ '/')|urlencode }}" target="_blank" rel="noopener noreferrer">X</a>
+				<span class="share-separator">&middot;</span>
+				<a class="share-link" href="https://bsky.app/intent/compose?text={{ (SITEURL ~ '/')|urlencode }}" target="_blank" rel="noopener noreferrer">Bluesky</a>
+			</div>
+		</div>
+		{% for description in pages if description.slug == 'description' %}
+		<div class="site-description">{{ description.content|safe }}</div>
+		{% endfor %}
+	</header>
+
+	<main class="roster">
+		{% for character in pages|selectattr('world')|sort(attribute='utc', reverse=True) %}
+		<section class="character">
+			<div class="character-row">
+				<div class="character-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="bio-{{ loop.index }}">
+					<img class="avatar" src="{{ character.avatar_url|default(SITEURL ~ '/images/avatar-default.png', true) }}" onerror="this.onerror=null;this.src='{{ SITEURL }}/images/avatar-default.png';" alt="" width="48" height="48">
+					<span class="identity">
+						<span class="name">{{ character.title }}</span>
+						<span class="world">{{ character.world }}</span>
+					</span>
+					<span class="toggle-indicator" aria-hidden="true"></span>
+				</div>
+			</div>
+			<div class="bio" id="bio-{{ loop.index }}" hidden>
+				{{ character.content|safe }}
+				<a class="bio-source-link" href="{{ SITEURL }}/characters/{{ character.slug }}.log" type="text/plain" target="_blank" rel="noopener noreferrer">View source</a>
+				{% if character.lodestone_id or character.fc_tag or character.fc_lodestone_id or character.seen or character.utc or character.character_title or character.job %}
+				<footer class="bio-footer">
+					<table>
+						{% if character.seen %}
+						<tr><th>Location seen</th><td><span class="city-full">{{ character.seen }}</span><span class="city-short">{{ character.seen.split('@')[-1].strip() }}</span></td></tr>
+						{% endif %}
+						{% if character.utc %}
+						<tr><th>Time seen</th><td><time datetime="{{ character.utc }}">{{ character.utc }}</time></td></tr>
+						{% endif %}
+						<tr class="spacer"><td colspan="2"></td></tr>
+						{% if character.character_title %}
+						<tr><th>Title</th><td>{{ character.character_title }}</td></tr>
+						{% endif %}
+						{% if character.job %}
+						<tr><th>Job</th><td>{{ character.job }}{% if character.level %} Lv. {{ character.level }}{% endif %}</td></tr>
+						{% endif %}
+						{% if character.lodestone_id %}
+						<tr><th>Lodestone</th><td><a href="https://na.finalfantasyxiv.com/lodestone/character/{{ character.lodestone_id }}/" target="_blank" rel="noopener noreferrer"><span class="url-full">https://na.finalfantasyxiv.com/lodestone/character/{{ character.lodestone_id }}/</span><span class="url-id">{{ character.lodestone_id }}</span></a></td></tr>
+						{% endif %}
+						{% if character.fc_tag %}
+						<tr class="spacer"><td colspan="2"></td></tr>
+						<tr><th>FC Tag</th><td>&laquo;{{ character.fc_tag }}&raquo;</td></tr>
+						{% endif %}
+						{% if character.fc_lodestone_id %}
+						<tr><th>FC Lodestone</th><td><a href="https://na.finalfantasyxiv.com/lodestone/freecompany/{{ character.fc_lodestone_id }}/" target="_blank" rel="noopener noreferrer"><span class="url-full">https://na.finalfantasyxiv.com/lodestone/freecompany/{{ character.fc_lodestone_id }}/</span><span class="url-id">{{ character.fc_lodestone_id }}</span></a></td></tr>
+						{% endif %}
+					</table>
+				</footer>
+				{% endif %}
+			</div>
+		</section>
+		{% else %}
+		<p class="empty">No characters yet.</p>
+		{% endfor %}
+	</main>
+
+	<footer class="site-footer">
+		<div class="footer-inner">
+			<span>With love (♥) from {{ AUTHOR }}</span>
+			<nav class="footer-links">
+				<a href="{{ SITEURL }}/docs/">Documentation</a>
+				<span class="footer-separator">&middot;</span>
+				<a href="https://github.com/sunnie-sunday/report">GitHub</a>
+			</nav>
+		</div>
+	</footer>
+	<script src="{{ SITEURL }}/theme/js/accordion.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="{{ SITEURL }}/theme/js/request.js"></script>
+	<script src="{{ SITEURL }}/theme/js/validator.js"></script>
+</body>
+</html>

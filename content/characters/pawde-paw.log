@@ -1,0 +1,48 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+    "protocolVersion": 2,
+    "pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Thu, 06 Aug 2026 13:27:12 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+
+{
+    "uploaderId": "84b24624-6cda-4225-a112-13b8b08fd007",
+    "apiKey": "eak_06e5e05483f427f6926917d6bda745803b11f13ce763eb1802cb1a9509890ab4",
+    "hmacSecret": "0bPnRIPUzdW7DXVhxrFGyACTzjWMUX0uyMW30TQ0nsQ="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 84b24624-6cda-4225-a112-13b8b08fd007
+X-Echo-Timestamp: 1786022834
+X-Echo-Nonce: 5156821984e74899a40da9d88a27c98e
+X-Echo-Signature: c18de6bbfb958578b5fa8eed7495e03109bf61160f58e54353d60ae1c402d85c
+Content-Length: 134
+
+{
+    "protocolVersion": 2,
+    "lodestoneId": "40795954",
+    "characterName": "Pawde Paw",
+    "homeWorldName": "Gilgamesh",
+    "contentId": "18014498568080618"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Thu, 06 Aug 2026 13:27:14 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+
+{
+    "error": "already_claimed"
+}

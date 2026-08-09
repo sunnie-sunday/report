@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Tue, 04 Aug 2026 16:36:36 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=82,cfOrigin;dur=433
+
+{
+	"uploaderId": "0b2b36f9-9c17-4e8b-ac13-655dbecc5eca",
+	"apiKey": "eak_7a7556c2ba534c4261ad77ba296726e468515da149aa188ee5dee4ea21408035",
+	"hmacSecret": "i/jre+AzEe6XW7KUdM3vg1XhetGiF8MVuHFD4LJ24Mg="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 0b2b36f9-9c17-4e8b-ac13-655dbecc5eca
+X-Echo-Timestamp: 1785861398
+X-Echo-Nonce: 25d34ed7168340ecaad7818f2dc99297
+X-Echo-Signature: 9f5f45a5e8f82edcbc34750fe5c2396561ad76c668ee594cd2b1cba58531bcc2
+Content-Length: 131
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "10431569",
+	"characterName": "Muwu Achuu",
+	"homeWorldName": "Siren",
+	"contentId": "18014498548329694"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Tue, 04 Aug 2026 16:36:39 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=93,cfOrigin;dur=217
+
+{
+	"error": "already_claimed"
+}

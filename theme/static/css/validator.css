@@ -1,0 +1,66 @@
+.sig-value {
+	border: none;
+	border-radius: 0.2rem;
+	padding: 0.03em 0.2em;
+	font: inherit;
+	cursor: pointer;
+}
+
+.sig-value.sig-invalid {
+	color: #cf222e;
+	background: #ffebe9;
+}
+
+.sig-value.sig-valid {
+	color: #1a7f37;
+	background: #e6ffec;
+}
+
+.sig-value:hover {
+	filter: brightness(1.05);
+}
+
+.swal2-html-container details {
+	margin-top: 0.6rem;
+	text-align: left;
+	font-size: 0.72rem;
+}
+
+.swal2-html-container summary {
+	cursor: pointer;
+}
+
+.swal2-html-container table {
+	margin: 0.35rem auto 0;
+	border-collapse: collapse;
+}
+
+.swal2-html-container td {
+	padding: 0.15rem 0.5rem 0.15rem 0;
+}
+
+.swal2-html-container td:first-child {
+	vertical-align: middle;
+}
+
+.swal2-html-container td:last-child {
+	vertical-align: top;
+}
+
+.swal2-html-container td strong {
+	white-space: nowrap;
+}
+
+.swal2-html-container td code {
+	display: block;
+	padding: 0.35rem;
+	background: rgba(0, 0, 0, 0.06);
+	border-radius: 0.25rem;
+	font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.swal2-html-container td code.sig-computed {
+	background: none;
+}

@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Tue, 04 Aug 2026 16:37:02 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=86,cfOrigin;dur=874
+
+{
+	"uploaderId": "edc893fa-f0f7-4a87-b4bb-e85b16e10bcd",
+	"apiKey": "eak_c4b8d904e44756ccb4d551df306995b5a1ede867efff2fd6703a954bb08efefc",
+	"hmacSecret": "TgvnQavM+ZTouZawgd1nhApRpCMBKpR0Ek6dTgwAsLo="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: edc893fa-f0f7-4a87-b4bb-e85b16e10bcd
+X-Echo-Timestamp: 1785861424
+X-Echo-Nonce: 08e0daef3cc145a599949721462cd79c
+X-Echo-Signature: 745f17c996b0a1af13d84242d82ba4e9c8819d53cb38037d7b626faeeb50ce4b
+Content-Length: 140
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "14903427",
+	"characterName": "Michael Fairclough",
+	"homeWorldName": "Mateus",
+	"contentId": "18014498551997472"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Tue, 04 Aug 2026 16:37:05 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=81,cfOrigin;dur=216
+
+{
+	"error": "already_claimed"
+}

@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Tue, 04 Aug 2026 16:37:20 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=202,cfOrigin;dur=365
+
+{
+	"uploaderId": "d3876151-957f-4cb1-a8a9-4e0351728fed",
+	"apiKey": "eak_abf695d740ea353bf50dd6babf56b5f503fb9f69074d496eea4cf377d6474607",
+	"hmacSecret": "7OSoRDmbIe+Zc4PKEfbsF6/LwTp4X5MQti9QxNYuUPE="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: d3876151-957f-4cb1-a8a9-4e0351728fed
+X-Echo-Timestamp: 1785861443
+X-Echo-Nonce: 3099fa8103b043efacaec6a7ffab6509
+X-Echo-Signature: 5a8de155f0530866ddcfac9e3d98d03533a38119935350ac4792ea5bcf7fd58b
+Content-Length: 140
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "61680429",
+	"characterName": "Baralai Olkund",
+	"homeWorldName": "Cuchulainn",
+	"contentId": "18014498579209489"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Tue, 04 Aug 2026 16:37:24 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=174,cfOrigin;dur=50
+
+{
+	"error": "already_claimed"
+}

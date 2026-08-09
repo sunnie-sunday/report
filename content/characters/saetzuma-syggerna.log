@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Tue, 04 Aug 2026 16:37:49 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=88,cfOrigin;dur=1426
+
+{
+	"uploaderId": "e71b5f1a-4e3a-47f3-bd6c-799b2b6f5f5e",
+	"apiKey": "eak_a3bfb13762ea95c1d0c71dd5461209a34244bd82f21eb1a625d2f44c2ab30bfd",
+	"hmacSecret": "bubp5M2FhQHI0X5ojMGKEI88JztWylOz4VQabESmPZE="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: e71b5f1a-4e3a-47f3-bd6c-799b2b6f5f5e
+X-Echo-Timestamp: 1785861471
+X-Echo-Nonce: d675f7fddbcd4861b10fcba082f9f24c
+X-Echo-Signature: b9e9fe13a3989821d4cb39cd687f5297550b2698dabff85a9471c93505ced471
+Content-Length: 140
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "23168188",
+	"characterName": "Saetzuma Syggerna",
+	"homeWorldName": "Balmung",
+	"contentId": "18014498557063255"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Tue, 04 Aug 2026 16:37:51 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=75,cfOrigin;dur=226
+
+{
+	"error": "already_claimed"
+}
