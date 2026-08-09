@@ -1,6 +1,6 @@
 AUTHOR = '/xivg/'
 SITENAME = 'Sunnie Sunday Report'
-SITEURL = 'https://echo-unvaulted.net'
+SITEURL = ''
 
 PATH = 'content'
 TIMEZONE = 'UTC'
