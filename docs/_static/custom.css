@@ -2,6 +2,7 @@ body {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
+	font-family: 'Roboto', sans-serif;
 }
 
 div.document {
@@ -71,6 +72,10 @@ div.sphinxsidebar ul {
 	color: #e2e2e3;
 }
 
+div.sphinxsidebar h3 {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
 div.sphinxsidebar a {
 	color: #76cce0;
 }
@@ -95,6 +100,7 @@ div.body h3,
 div.body h4,
 div.body h5,
 div.body h6 {
+	font-family: 'Roboto Condensed', sans-serif;
 	background-color: #363944;
 	color: #f39660;
 	border-bottom: 1px solid #3b3e48;
@@ -139,6 +145,8 @@ div.warning {
 }
 
 pre {
+	font-family: 'DejaVu Mono', monospace;
+	font-size: 12px;
 	background-color: #222327;
 	border-color: #3b3e48;
 	color: #b9b9b9;
@@ -153,6 +161,8 @@ div.highlight pre {
 }
 
 code {
+	font-family: 'DejaVu Mono', monospace;
+	font-size: 12px;
 	background-color: #3b3e48;
 	color: #e2e2e3;
 }

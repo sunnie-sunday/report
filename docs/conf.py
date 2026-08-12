@@ -18,7 +18,22 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 html_theme = 'classic'
 html_extra_path = [".nojekyll"]
 html_static_path = ['_static']
-html_css_files = ['custom.css']
+html_css_files = [
+	'https://cdn.jsdelivr.net/npm/@fontsource/roboto@5.3.0/latin-400.css',
+	'https://cdn.jsdelivr.net/npm/@fontsource/roboto@5.3.0/latin-400-italic.css',
+	'https://cdn.jsdelivr.net/npm/@fontsource/roboto@5.3.0/latin-700.css',
+	'https://cdn.jsdelivr.net/npm/@fontsource/roboto@5.3.0/latin-700-italic.css',
+	'https://cdn.jsdelivr.net/npm/@fontsource/roboto-condensed@5.3.0/latin-400.css',
+	'https://cdn.jsdelivr.net/npm/@fontsource/roboto-condensed@5.3.0/latin-400-italic.css',
+	'https://cdn.jsdelivr.net/npm/@fontsource/roboto-condensed@5.3.0/latin-700.css',
+	'https://cdn.jsdelivr.net/npm/@fontsource/roboto-condensed@5.3.0/latin-700-italic.css',
+	'https://cdn.jsdelivr.net/npm/@fontsource/dejavu-mono@5.3.0/latin-400.css',
+	'https://cdn.jsdelivr.net/npm/@fontsource/dejavu-mono@5.3.0/latin-400-italic.css',
+	'https://cdn.jsdelivr.net/npm/@fontsource/dejavu-mono@5.3.0/latin-700.css',
+	'https://cdn.jsdelivr.net/npm/@fontsource/dejavu-mono@5.3.0/latin-700-italic.css',
+	'custom.css'
+]
+
 html_show_sphinx = False
 html_use_index = False
 html_baseurl = "https://echo-unvaulted.net/docs/"

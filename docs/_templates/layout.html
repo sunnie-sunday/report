@@ -1,4 +1,7 @@
 {% extends "!layout.html" %}
+{% block extrahead %}
+	<link rel="preconnect" href="https://cdn.jsdelivr.net">
+{% endblock %}
 {% block rootrellink %}
 	<li class="nav-item nav-item-0"><a href="../">Sunnie Sunday Report</a>{{ reldelim1 }}</li>
 	<li class="nav-item nav-item-0"><a href="{{ pathto(root_doc)|e }}">Documentation</a>{{ reldelim1 }}</li>
