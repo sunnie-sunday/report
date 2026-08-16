@@ -1,3 +1,5 @@
+:og:description: An alphabetical index of terms used across this documentation.
+
 Glossary
 ===========
 

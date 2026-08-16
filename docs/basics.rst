@@ -1,3 +1,5 @@
+:og:description: Echo is a third-party plugin for Final Fantasy XIV that runs continuously in the background while the game is open.
+
 What is Echo?
 =============
 

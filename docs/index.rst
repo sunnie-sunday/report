@@ -1,3 +1,5 @@
+:og:description: Weekly report of discovered EchoVault contributors, including documentation of Echo's data structure and API.
+
 Echo-Unvaulted
 ==============
 
@@ -8,9 +10,9 @@ The report is to let stalkers know they aren't anonymous and can be caught by pl
 Good news: so far this plugin isn't as popular as it's developer would like it to be.
 
 .. toctree::
-    :hidden:
+   :hidden:
 
-    glossary
+   glossary
 
 - :doc:`glossary` — an alphabetical index of terms used across this documentation.
 
@@ -18,15 +20,16 @@ About Echo
 ----------
 
 .. include:: basics.rst
-    :start-after: .. _echo-start:
-    :end-before: .. _echo-end:
+   :start-after: .. _echo-start:
+   :end-before: .. _echo-end:
 
 .. toctree::
-    :maxdepth: 3
+   :maxdepth: 3
 
-    basics
-    motives
-    policy_violations
+   basics
+   codes
+   motives
+   policy_violations
 
 Echo's Wire API
 ---------------

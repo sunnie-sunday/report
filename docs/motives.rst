@@ -1,3 +1,5 @@
+:og:description: Every scoring, ranking, and progression mechanic Echo shows its own user.
+
 Motives of Echo users
 =====================
 

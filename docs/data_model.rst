@@ -1,3 +1,5 @@
+:og:description: C# data structure of Echo's plugin.
+
 Data Model (C#)
 ===============
 

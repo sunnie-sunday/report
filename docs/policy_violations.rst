@@ -1,3 +1,5 @@
+:og:description: This page cross-references Echo's behavior against published rules from Square Enix and from the Dalamud project.
+
 Policy Violations
 =================
 

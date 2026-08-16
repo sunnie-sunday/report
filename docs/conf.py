@@ -1,12 +1,13 @@
 project = 'Sunnie Sunday Report'
 author = '/xivg/'
 copyright = f'With love (♥) from {author}'
-release = "2026.08.09"
+release = "2026.08.16"
 
 extensions = [
 	"sphinx.ext.autosectionlabel",
 	"sphinxcontrib.httpdomain",
 	"sphinxcontrib.httpexample",
+	"sphinxext.opengraph"
 ]
 
 autosectionlabel_prefix_document = True
@@ -33,6 +34,10 @@ html_css_files = [
 	'https://cdn.jsdelivr.net/npm/@fontsource/dejavu-mono@5.3.0/latin-700-italic.css',
 	'custom.css'
 ]
+
+ogp_site_url = "https://echo-unvaulted.net/docs/"
+ogp_site_name = "Echo-Unvaulted"
+ogp_enable_meta_description = False
 
 html_show_sphinx = False
 html_use_index = False

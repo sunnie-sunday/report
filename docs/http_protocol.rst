@@ -1,3 +1,5 @@
+:og:description: This page covers how Echo talks to its server: transport, authentication, every endpoint it calls, and the memory-manipulation subsystem.
+
 Transfer Protocol (HTTP)
 ========================
 
