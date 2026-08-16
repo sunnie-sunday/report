@@ -3,8 +3,8 @@ Content-Type: application/json; charset=utf-8
 Content-Length: 48
 
 {
-    "protocolVersion": 2,
-    "pluginVersion": "0.8.3"
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
 }
 
 HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
@@ -16,9 +16,9 @@ Server: cloudflare
 Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=77,cfOrigin;dur=172
 
 {
-    "uploaderId": "11631bac-e6b8-453e-95f7-919b752eb216",
-    "apiKey": "eak_4a7c1cbdb1bea31ba31ef82e2fe968fcd9879242d44f42a6bd1ed7498bc49e86",
-    "hmacSecret": "5zKSeL5gUjVW/ia+8VJMeMcHbbbrkEHFzoTqjk+2hQo="
+	"uploaderId": "11631bac-e6b8-453e-95f7-919b752eb216",
+	"apiKey": "eak_4a7c1cbdb1bea31ba31ef82e2fe968fcd9879242d44f42a6bd1ed7498bc49e86",
+	"hmacSecret": "5zKSeL5gUjVW/ia+8VJMeMcHbbbrkEHFzoTqjk+2hQo="
 }
 
 POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
@@ -30,11 +30,11 @@ X-Echo-Signature: b0e7b4bc0f1c74921160c65e1ab3ba121ba2d99ef4cc70a8bb98b8817066c2
 Content-Length: 137
 
 {
-    "protocolVersion": 2,
-    "lodestoneId": "43865878",
-    "characterName": "Pisti Jinjahl",
-    "homeWorldName": "Marilith",
-    "contentId": "18014498569896130"
+	"protocolVersion": 2,
+	"lodestoneId": "43865878",
+	"characterName": "Pisti Jinjahl",
+	"homeWorldName": "Marilith",
+	"contentId": "18014498569896130"
 }
 
 HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
@@ -46,5 +46,5 @@ Server: cloudflare
 Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=114,cfOrigin;dur=166
 
 {
-    "error": "already_claimed"
+	"error": "already_claimed"
 }
