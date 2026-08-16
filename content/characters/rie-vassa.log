@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Sat, 15 Aug 2026 16:33:47 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=78,cfOrigin;dur=100
+
+{
+	"uploaderId": "92cd7e02-f6ac-4703-bf06-7c81f8326df0",
+	"apiKey": "eak_9debfb97a64c58a9dfdfa8416267ab5720c34ee864966803534d518406bf76fe",
+	"hmacSecret": "8DFLZ+VF2wGo9KyAiQc2koSwJjoQM0YIokPmOLr6NQc="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 92cd7e02-f6ac-4703-bf06-7c81f8326df0
+X-Echo-Timestamp: 1786811629
+X-Echo-Nonce: 91401c33dd1640c996953f6b11c1383a
+X-Echo-Signature: 20ae58c52807dcc6354314796b29b3784b1a2fc12cbb67c5e26ef6a60f624e5d
+Content-Length: 137
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "60165751",
+	"characterName": "Rie Vassa",
+	"homeWorldName": "Midgardsormr",
+	"contentId": "18014498578418321"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Sat, 15 Aug 2026 16:33:49 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=85,cfOrigin;dur=117
+
+{
+	"error": "already_claimed"
+}

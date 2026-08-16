@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Thu, 13 Aug 2026 02:55:45 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=4,cfOrigin;dur=208
+
+{
+	"uploaderId": "b70f18f9-30c0-4d96-a0a4-ce73f2967ff0",
+	"apiKey": "eak_cba41865b1f442a3b22a9f991464801019b2970bc4ff89843be77295d4d4fdca",
+	"hmacSecret": "zRZGreFVoJnxlDQ5ABB7EMAEaBSVLOeofZu4j4QpRcs="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: b70f18f9-30c0-4d96-a0a4-ce73f2967ff0
+X-Echo-Timestamp: 1786589746
+X-Echo-Nonce: 0b809f9ebacf405593b7ea1ed40c0be6
+X-Echo-Signature: 9d94ad86b1df6c4957fedd0b3a3a0e38a2b157239d45cde1d8e8be3b8870a41d
+Content-Length: 136
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "31876611",
+	"characterName": "Morgana Mysdia",
+	"homeWorldName": "Ultros",
+	"contentId": "18014498562436892"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Thu, 13 Aug 2026 02:55:47 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=31,cfOrigin;dur=212
+
+{
+	"error": "already_claimed"
+}

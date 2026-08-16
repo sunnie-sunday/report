@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Thu, 13 Aug 2026 21:46:39 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=29,cfOrigin;dur=1175
+
+{
+	"uploaderId": "552ee545-18cc-4ce9-8803-4d42fd88a14b",
+	"apiKey": "eak_566caf1758f9d4df78482d1d7e223a7e0ed89120c3f45c34bdd6449d480a88df",
+	"hmacSecret": "mLoztYB4QNq8VQG5vd1MViTCOY16HQKisF/fZJsMBvw="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 552ee545-18cc-4ce9-8803-4d42fd88a14b
+X-Echo-Timestamp: 1786657601
+X-Echo-Nonce: 0d282a715beb466e9e5cd1e7caedea27
+X-Echo-Signature: 99a1eaf83e317a0125e72b726e2a3788eb040e329c339f587593e30ad32d457c
+Content-Length: 140
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "60348742",
+	"characterName": "Evelyn Jade",
+	"homeWorldName": "Halicarnassus",
+	"contentId": "18014498578504752"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Thu, 13 Aug 2026 21:46:41 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=57,cfOrigin;dur=244
+
+{
+	"error": "already_claimed"
+}

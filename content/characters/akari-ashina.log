@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Thu, 13 Aug 2026 03:45:01 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=77,cfOrigin;dur=139
+
+{
+	"uploaderId": "ad0aaf37-7754-4280-bc58-7a1742a318d2",
+	"apiKey": "eak_57e91ce3147f9d37e9757fb6cd0037b4af2202f464ec62486c492f0529e06a64",
+	"hmacSecret": "siYLg/gjXl4c/opeyyzqz3AKMX6b6/Q3i94rgV8S340="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: ad0aaf37-7754-4280-bc58-7a1742a318d2
+X-Echo-Timestamp: 1786592702
+X-Echo-Nonce: a3ff8790b98f49f29da17e43ac2ff5db
+X-Echo-Signature: a30b0e5d1d4910babfe9562a2cde370a794a83183831874770c9ab282a5dc50e
+Content-Length: 132
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "36612489",
+	"characterName": "Akari Ashina",
+	"homeWorldName": "Lich",
+	"contentId": "18014598547983006"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Thu, 13 Aug 2026 03:45:02 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=79,cfOrigin;dur=139
+
+{
+	"error": "already_claimed"
+}

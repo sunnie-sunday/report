@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Wed, 12 Aug 2026 23:10:29 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=187,cfOrigin;dur=33
+
+{
+	"uploaderId": "52c941d5-4839-41bd-9d9d-ba304008aa81",
+	"apiKey": "eak_a9ff4797db5bd7d8f0273862314dc78a617094fbb055e58592f1ffc4819f2b2b",
+	"hmacSecret": "4QnPktgsU/vZEOHv80ZEqjmjGHZ16blVCJA9nauDJUg="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 52c941d5-4839-41bd-9d9d-ba304008aa81
+X-Echo-Timestamp: 1786576231
+X-Echo-Nonce: dc8d96a600ca4c3db46573d0bba0272e
+X-Echo-Signature: 4d11e544ec7f09d10bce7bfaca02cecdd9d9d08512d3ff24c1dca5f36bf805a6
+Content-Length: 136
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "55523421",
+	"characterName": "Hoshimi Miyabi",
+	"homeWorldName": "Faerie",
+	"contentId": "18014498576287194"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Wed, 12 Aug 2026 23:10:32 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=185,cfOrigin;dur=32
+
+{
+	"error": "already_claimed"
+}

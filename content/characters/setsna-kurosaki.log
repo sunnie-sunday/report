@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Wed, 12 Aug 2026 16:29:39 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=39,cfOrigin;dur=629
+
+{
+	"uploaderId": "5dbed83e-541b-4926-a908-9006c8736efa",
+	"apiKey": "eak_1d6f674a40f69e3ad1b2a022b58c1d49fff74bec6c72e937ee28e0d5a4ba9dcb",
+	"hmacSecret": "04QXQzt+hOgWPKs0U72m/w2HA1dSUfmbCQCEDgXe/FI="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 5dbed83e-541b-4926-a908-9006c8736efa
+X-Echo-Timestamp: 1786552181
+X-Echo-Nonce: 553140c09f36484ba57ed7d5e9642929
+X-Echo-Signature: 249aae1fe9fdd14821f6412b7094295c91d661554a9e8398fc175ff3fdbf6d44
+Content-Length: 136
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "19220702",
+	"characterName": "Setsna Kurosaki",
+	"homeWorldName": "Shiva",
+	"contentId": "18014598541646324"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Wed, 12 Aug 2026 16:29:42 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=75,cfOrigin;dur=242
+
+{
+	"error": "already_claimed"
+}

@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Wed, 12 Aug 2026 20:41:16 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=41,cfOrigin;dur=312
+
+{
+	"uploaderId": "1bf8ffc2-77d0-4d37-8b11-a449b49a1a42",
+	"apiKey": "eak_154dfa1fe17ac44df4220c166c6be88fa8a4628f7c55b5dd4dc6d374a67c174d",
+	"hmacSecret": "YPFnbGyUitxibthB23VFxGRx6/aE74dIZRtIYOVo+Tk="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 1bf8ffc2-77d0-4d37-8b11-a449b49a1a42
+X-Echo-Timestamp: 1786567277
+X-Echo-Nonce: cef84c43807c46d9b777873049ea629f
+X-Echo-Signature: c845e93ae4a3e536f2ce842943c1674be18a27551c60397b7f1a4da770ab2951
+Content-Length: 132
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "37495150",
+	"characterName": "Dark Barbar",
+	"homeWorldName": "Shiva",
+	"contentId": "18014598548364504"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Wed, 12 Aug 2026 20:41:17 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=34,cfOrigin;dur=137
+
+{
+	"error": "already_claimed"
+}

@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Wed, 12 Aug 2026 09:09:13 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=21,cfOrigin;dur=246
+
+{
+	"uploaderId": "6bd511b9-24b0-484b-8db9-355cfb2cff64",
+	"apiKey": "eak_e7ec81b99b2c6fe1759c83b8c27e0a10677cf6ab8566d35b87816b59b9abc348",
+	"hmacSecret": "CbVKS+9VT2d2c8ICh9xn3pQ2/hvBKz04V7837/cdjYc="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 6bd511b9-24b0-484b-8db9-355cfb2cff64
+X-Echo-Timestamp: 1786525757
+X-Echo-Nonce: 6ea4b33cf20e4f62801f36fc92eaa2a0
+X-Echo-Signature: 5c09823497bb6c963229e563eccf4c4e78ef1526c019be60f9c78d7e5ca32dd3
+Content-Length: 134
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "36116861",
+	"characterName": "Hana Song",
+	"homeWorldName": "Twintania",
+	"contentId": "18014598547806997"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Wed, 12 Aug 2026 09:09:18 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=24,cfOrigin;dur=60
+
+{
+	"error": "already_claimed"
+}

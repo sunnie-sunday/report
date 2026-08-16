@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Mon, 10 Aug 2026 08:23:15 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=32,cfOrigin;dur=176
+
+{
+	"uploaderId": "4dfa9c1a-8b6b-4ed4-9a5f-cf33f2a63a68",
+	"apiKey": "eak_8d4789cdf5bb4eb2322df01211410438ab684f4ba98d03ae7076ba150f7b858d",
+	"hmacSecret": "FYpJzeHUApts1D13Ls3XgdP9A2EGaYgK5FCpsAk1gWM="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 4dfa9c1a-8b6b-4ed4-9a5f-cf33f2a63a68
+X-Echo-Timestamp: 1786350196
+X-Echo-Nonce: f41d456b13154ca4ae93f7a2dac758ae
+X-Echo-Signature: 81418b13238aadf697066ad1482e8e89915694f9c5559d5d6f69d02447758df6
+Content-Length: 144
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "35383351",
+	"characterName": "Crystalline Kracker",
+	"homeWorldName": "Rafflesia",
+	"contentId": "18014498564488371"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Mon, 10 Aug 2026 08:23:16 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=35,cfOrigin;dur=189
+
+{
+	"error": "already_claimed"
+}

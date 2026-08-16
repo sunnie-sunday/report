@@ -1,0 +1,48 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Sat, 15 Aug 2026 22:23:53 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+
+{
+	"uploaderId": "898a8fd0-db82-4210-912c-b471c06ddc90",
+	"apiKey": "eak_8deb898a9affdcc95cf8304e6f97add8885428d159e00f9ea68543ee0199a5a5",
+	"hmacSecret": "r7VZMTUuTP8JgxNgjNwHGt7xU34fhwc0AxFw9pFFXeM="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 898a8fd0-db82-4210-912c-b471c06ddc90
+X-Echo-Timestamp: 1786832634
+X-Echo-Nonce: 7fdfdfee2bd140db9cc0e0b2a3f02528
+X-Echo-Signature: df19a1370da50c81b5dd121ae3a053745e86cdc129aaedd1ade26671dccf8380
+Content-Length: 132
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "46808683",
+	"characterName": "Yisu Geneq",
+	"homeWorldName": "Faerie",
+	"contentId": "18014498571594222"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Sat, 15 Aug 2026 22:23:54 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+
+{
+	"error": "already_claimed"
+}

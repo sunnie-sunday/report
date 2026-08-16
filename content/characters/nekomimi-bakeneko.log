@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Wed, 12 Aug 2026 22:15:23 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=23,cfOrigin;dur=361
+
+{
+	"uploaderId": "87f917c4-4444-4cb4-82de-8079b332e98e",
+	"apiKey": "eak_ac6d55f9e01d18cf3318fe8b253a085348f2d2a781bfd0b9c13f09d73507ee68",
+	"hmacSecret": "4Y9gtgXsmlB2SVaKGTn6nbu6UBmb1tQoM8DxWT6FZEo="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 87f917c4-4444-4cb4-82de-8079b332e98e
+X-Echo-Timestamp: 1786572924
+X-Echo-Nonce: 816ddd31f33a4b96b394d73467f97d1f
+X-Echo-Signature: 0d141ad8e96dcd7e5158e85bffc876429d641b65a78e4a45f1732a0467198bd6
+Content-Length: 139
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "48231370",
+	"characterName": "Nekomimi Bakeneko",
+	"homeWorldName": "Seraph",
+	"contentId": "18014498572409123"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Wed, 12 Aug 2026 22:15:25 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=27,cfOrigin;dur=71
+
+{
+	"error": "already_claimed"
+}

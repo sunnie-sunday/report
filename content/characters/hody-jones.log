@@ -1,0 +1,48 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Thu, 13 Aug 2026 22:38:23 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+
+{
+	"uploaderId": "7602757a-92c6-4c6d-a2d7-2f15c83f3514",
+	"apiKey": "eak_0abe426f21205d7658b736132a4c0df41474660db7006d191880b1cf3435c26d",
+	"hmacSecret": "CdKgrPlsJnCT44xKBAMgh25KnaMrV4pWH8daKXwDgAs="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 7602757a-92c6-4c6d-a2d7-2f15c83f3514
+X-Echo-Timestamp: 1786660704
+X-Echo-Nonce: 008841cc5c934aa4a786700da6e54860
+X-Echo-Signature: 28013bc5fb01f47587177742189fc45697b879f1ed2a15b91a9031ab4453e966
+Content-Length: 132
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "7407339",
+	"characterName": "Hody Jones",
+	"homeWorldName": "Balmung",
+	"contentId": "18014498545426706"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Thu, 13 Aug 2026 22:38:24 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+
+{
+	"error": "already_claimed"
+}

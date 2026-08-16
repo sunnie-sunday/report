@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Tue, 11 Aug 2026 08:47:15 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=51,cfOrigin;dur=313
+
+{
+	"uploaderId": "0f6999a5-d60a-411b-9112-6a801d6e660f",
+	"apiKey": "eak_a50fee78497f6e60f9caceb345c09df4d14db0a55927e77c0e30211f72ce69ae",
+	"hmacSecret": "zcTY7qKKfNomWtqWPUSeybeY/luWFpgnNXiEUaT4SPQ="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 0f6999a5-d60a-411b-9112-6a801d6e660f
+X-Echo-Timestamp: 1786438037
+X-Echo-Nonce: 4a23eb05ded64c98adb853d0fcdf537f
+X-Echo-Signature: a0d459aaec3cd44c3fed3bdbc24c6985d7f9b55fc41e5dc4cebe9bf9731c16bc
+Content-Length: 133
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "47592644",
+	"characterName": "Aiki Mittens",
+	"homeWorldName": "Lamia",
+	"contentId": "18014498572044193"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Tue, 11 Aug 2026 08:47:17 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=4,cfOrigin;dur=300
+
+{
+	"error": "already_claimed"
+}
