@@ -1,0 +1,48 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Wed, 19 Aug 2026 23:06:35 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+
+{
+	"uploaderId": "268ceb17-6dac-42e5-b230-b29bc3e3afc8",
+	"apiKey": "eak_eb8348d8caea856cb5abd6157de470058169b0b8adf149ceefbd62b6f3f71c3d",
+	"hmacSecret": "pgcpKnGvje5DiCy2YK58mOoekdAFUh6oC+bhuriyU9A="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 268ceb17-6dac-42e5-b230-b29bc3e3afc8
+X-Echo-Timestamp: 1787180797
+X-Echo-Nonce: 968abdcd167b48379ac6ce9ee39405ab
+X-Echo-Signature: b8ef23d5767bd6fb21e1c3bdcaa05cf515c711b9d900c2414af93f55ab80cbbb
+Content-Length: 131
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "11539517",
+	"characterName": "Kx Nunu",
+	"homeWorldName": "Ragnarok",
+	"contentId": "18014498549427030"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Wed, 19 Aug 2026 23:06:38 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+
+{
+	"error": "already_claimed"
+}

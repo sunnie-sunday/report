@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Sat, 22 Aug 2026 21:49:51 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=35,cfOrigin;dur=557
+
+{
+	"uploaderId": "3b9b5ca2-6c7f-4da0-bfda-df5ff2475fd0",
+	"apiKey": "eak_fb6b2f0a49d638721d2a55ec7f2c073d25a56cfeae740a4cec791d0f7008611b",
+	"hmacSecret": "JdUO38mvn3blHRbTS+zc8P3n5TyspbHv0bjgZb2FYRA="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 3b9b5ca2-6c7f-4da0-bfda-df5ff2475fd0
+X-Echo-Timestamp: 1787435392
+X-Echo-Nonce: 6de99eafed9b44808eef4192be0ed763
+X-Echo-Signature: bf70d36a55439fadfc42f2900b67414d3e0043b0776f23279c04e7d5a034a113
+Content-Length: 140
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "61224196",
+	"characterName": "Schizo Gangstalker",
+	"homeWorldName": "Jenova",
+	"contentId": "18014498578955211"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Sat, 22 Aug 2026 21:49:53 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=3,cfOrigin;dur=159
+
+{
+	"error": "already_claimed"
+}
