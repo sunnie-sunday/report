@@ -1,7 +1,7 @@
 project = 'Sunnie Sunday Report'
 author = '/xivg/'
-copyright = f'With love (♥) from {author}'
-release = "2026.08.16"
+copyright = f'With love (\u2665\uFE0E) from {author}'
+release = "2026.08.24"
 
 extensions = [
 	"sphinx.ext.autosectionlabel",

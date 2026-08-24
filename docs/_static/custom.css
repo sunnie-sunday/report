@@ -144,6 +144,49 @@ div.warning {
 	color: #e2e2e3;
 }
 
+@media screen and (max-width: 800px) {
+	body {
+		min-width: 0 !important;
+		margin: 0 !important;
+	}
+
+	.document {
+		width: 100% !important;
+		margin: 0 !important;
+	}
+
+	.documentwrapper {
+		float: none !important;
+		width: 100% !important;
+		margin: 0 !important;
+	}
+
+	.bodywrapper {
+		margin: 0 !important;
+	}
+
+	.sphinxsidebar {
+		display: none !important;
+	}
+
+	.related {
+		font-size: 90% !important;
+		line-height: 1.4em !important;
+		height: auto !important;
+		padding: 5px 0 !important;
+	}
+
+	.related ul {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	.related ul li {
+		display: inline-block !important;
+		margin: 2px 5px !important;
+	}
+}
+
 pre {
 	font-family: 'DejaVu Mono', monospace;
 	font-size: 12px;
