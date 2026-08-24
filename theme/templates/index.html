@@ -66,7 +66,7 @@
 		<section class="character">
 			<div class="character-row">
 				<div class="character-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="bio-{{ loop.index }}">
-					<img class="avatar" src="{{ character.avatar_url|default(SITEURL ~ '/images/avatar-default.png', true) }}" onerror="this.onerror=null;this.src='{{ SITEURL }}/images/avatar-default.png';" alt="" width="48" height="48">
+					<img class="avatar" src="{{ character.avatar_url|default(SITEURL ~ '/images/avatar-default.png', true) }}" alt="" width="48" height="48" onerror="this.onerror=null;this.src='{{ SITEURL }}/images/avatar-default.png';" {% if loop.index > 5 %} loading="lazy" {% else %} loading="eager" fetchpriority="high" {% endif %}>
 					<span class="identity">
 						<span class="name">{{ character.title }}</span>
 						<span class="world">{{ character.world }}</span>
