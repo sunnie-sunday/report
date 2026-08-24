@@ -11,7 +11,14 @@ COLOR_THEME = 'sonokai-dark'
 
 PAGE_PATHS = ['characters', 'pages']
 ARTICLE_PATHS = ['articles'] # Folder not required
-STATIC_PATHS = ['images', 'characters']
+STATIC_PATHS = ['characters', 'extra', 'images']
+
+# Copy 'content/extra/' files to the root output folder
+EXTRA_PATH_METADATA = {
+	'extra/CNAME': {'path': 'CNAME'},
+	'extra/favicon.ico': {'path': 'favicon.ico'},
+	'extra/robots.txt': {'path': 'robots.txt'}
+}
 
 # Render everything onto a single index.html instead of a paginated blog
 DIRECT_TEMPLATES = ['index']
