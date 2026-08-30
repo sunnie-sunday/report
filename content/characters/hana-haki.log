@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.4"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Thu, 27 Aug 2026 06:37:21 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=26,cfOrigin;dur=203
+
+{
+	"uploaderId": "783ed4e8-378a-4cbb-a09f-882c9231c7fe",
+	"apiKey": "eak_01ca6ad91d102da3232fd7cc406d9a700222d0c881aab76c7babe656f2740d58",
+	"hmacSecret": "k+VRk4SIQZidPmEt7wJfE5RV/mG9DkF/IBVSt5T4x2A="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 783ed4e8-378a-4cbb-a09f-882c9231c7fe
+X-Echo-Timestamp: 1787812643
+X-Echo-Nonce: f1cd774d97a546378320d0697b42cf1c
+X-Echo-Signature: 4bd7f3e3d1b54b38661c31343179b9a8d14e725e4c3f1a8bb60c5563da3bf07a
+Content-Length: 131
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "45276165",
+	"characterName": "Hana Haki",
+	"homeWorldName": "Faerie",
+	"contentId": "18014498570707154"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Thu, 27 Aug 2026 06:37:23 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=32,cfOrigin;dur=191
+
+{
+	"error": "already_claimed"
+}

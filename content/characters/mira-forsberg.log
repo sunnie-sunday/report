@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.4"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Wed, 26 Aug 2026 21:08:10 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=77,cfOrigin;dur=180
+
+{
+	"uploaderId": "34562b3c-0925-478d-8bb4-31422fcf5bdf",
+	"apiKey": "eak_dd2b0153a9516077ddbdcb1068b8c0f050e62cbdd4ee45af5cc32c4d62145791",
+	"hmacSecret": "+OaV4+X+DFSqGqGj908zr1dYePI7GzzXeDxRj+AWKh0="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 34562b3c-0925-478d-8bb4-31422fcf5bdf
+X-Echo-Timestamp: 1787778493
+X-Echo-Nonce: cee3b92eb68d48b78408d62a7aff57ef
+X-Echo-Signature: 27aaee3c59afe55e264214ed0abec2d3b9f74dd1bd416275fdf1e8ac69b073fa
+Content-Length: 136
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "61169753",
+	"characterName": "Mira Forsberg",
+	"homeWorldName": "Balmung",
+	"contentId": "18014498578911256"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Wed, 26 Aug 2026 21:08:13 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=75,cfOrigin;dur=200
+
+{
+	"error": "already_claimed"
+}

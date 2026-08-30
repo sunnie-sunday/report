@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.4"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Mon, 24 Aug 2026 19:23:26 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=49,cfOrigin;dur=165
+
+{
+	"uploaderId": "982dba61-49c9-43e5-a3d7-ae0360b53dac",
+	"apiKey": "eak_97da567bb12b34a2c5536ee0d6db5d5f5fec45fdb23403b98f8a3207ba56b60e",
+	"hmacSecret": "wv1KMKbev2hBStjpgm0CXCoA/AygrlcIF8aF2cErtHg="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 982dba61-49c9-43e5-a3d7-ae0360b53dac
+X-Echo-Timestamp: 1787599408
+X-Echo-Nonce: d3335f2e5b354c9e8b3d0679705b3723
+X-Echo-Signature: 727b1b4cdc470c3ecea121bf09b87c210bbd475a1752898dcc91c665eba85397
+Content-Length: 134
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "20267421",
+	"characterName": "Moirenna Yue",
+	"homeWorldName": "Kujata",
+	"contentId": "18014398546831529"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Mon, 24 Aug 2026 19:23:28 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=37,cfOrigin;dur=128
+
+{
+	"error": "already_claimed"
+}

@@ -1,0 +1,48 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.3"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Sun, 23 Aug 2026 01:46:20 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+
+{
+	"uploaderId": "75376923-432a-4a29-84bf-5b3a5312c375",
+	"apiKey": "eak_31e7c6729fa84e577449b43f7922bb33b2ff973008466af08c97107f13b1f8f9",
+	"hmacSecret": "DqyeyGSdo3LHKYCGZnElY5kuGmrRXsEjQpQXM7Ck9s0="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 75376923-432a-4a29-84bf-5b3a5312c375
+X-Echo-Timestamp: 1787449582
+X-Echo-Nonce: e8bd57a87cbc47b0a3fd923d5fd6703c
+X-Echo-Signature: 4f36d34ee514b2509805f7523cdb223d129f397f98cf7db6ef3cccac1bec7a96
+Content-Length: 136
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "21711781",
+	"characterName": "Alice Furukane",
+	"homeWorldName": "Jenova",
+	"contentId": "18014498556250135"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Sun, 23 Aug 2026 01:46:22 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+
+{
+	"error": "already_claimed"
+}

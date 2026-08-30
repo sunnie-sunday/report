@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.4"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Tue, 25 Aug 2026 21:18:55 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=222,cfOrigin;dur=212
+
+{
+	"uploaderId": "1386db96-495b-4a0f-bfa5-c0e3a689d1a5",
+	"apiKey": "eak_439a9d8f012d7a89999371e9a170aec51571ea114663b767849b6d49186310b4",
+	"hmacSecret": "Usve8FqtvQD6VVP9pkyiLaDqSUFGYEVtz9tl4qM1a/A="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 1386db96-495b-4a0f-bfa5-c0e3a689d1a5
+X-Echo-Timestamp: 1787692737
+X-Echo-Nonce: 01ea5ec7cab4480fae7c16fdb254290b
+X-Echo-Signature: e38b3f4737bea34d207d9a6769a6fdefe5be678f5ef3c8348016d0d4043e757a
+Content-Length: 137
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "37648152",
+	"characterName": "Saphi Ryukari",
+	"homeWorldName": "Louisoix",
+	"contentId": "18014598548424249"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Tue, 25 Aug 2026 21:18:58 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=220,cfOrigin;dur=214
+
+{
+	"error": "already_claimed"
+}

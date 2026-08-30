@@ -13,6 +13,6 @@ For more information:
 - **Dalamud**'s `Statement on Account IDs and Plugins <https://dalamud.dev/news/2025/01/10/account-ids-and-plugins/>`_ blog post
 - **Echo-Unvaulted**'s `Documentation </docs/index.html>`_
 
-``2026-08-23``
+``2026-08-30``
 
-After auditing a total of **68 973** unique characters, **28** users have been found:
+After auditing a total of **87 829** unique characters, **35** users have been found:

@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.4"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Thu, 27 Aug 2026 22:22:27 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=55,cfOrigin;dur=317
+
+{
+	"uploaderId": "f63bd8e4-1904-489d-bdf0-089cc342c8dd",
+	"apiKey": "eak_32a30164251e8e8b193f1a272c7047489810ce773c3ab1c529395aaaa108af80",
+	"hmacSecret": "QCBYPOQeipHZinbL1mi4yFfgKFotuO1fAKC1bs5G2Bc="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: f63bd8e4-1904-489d-bdf0-089cc342c8dd
+X-Echo-Timestamp: 1787869349
+X-Echo-Nonce: b58b0938da8f4de893226ad547fa26bc
+X-Echo-Signature: 4a937f218a90cb7664d4d485211bea03280b017f2b4c45f3bb4cad30aff06298
+Content-Length: 133
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "47189820",
+	"characterName": "Veyla Sylvang",
+	"homeWorldName": "Lich",
+	"contentId": "18014598551910142"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Thu, 27 Aug 2026 22:22:29 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=95,cfOrigin;dur=154
+
+{
+	"error": "already_claimed"
+}
