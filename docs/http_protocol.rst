@@ -416,11 +416,18 @@ Request (``IngestBatch``):
    }
 
 ``reporter`` (``ReporterSelf``) is the **uploading player's own** current zone and
-exact coordinates, attached to every single batch:
+exact coordinates, attached to every single batch **and** individual sighting entries:
 
 .. code-block:: text
 
    { "territoryId": ushort, "x": float, "y": float, "z": float }
+
+``equipment`` (``EquipSlot``) is a list of 10 gear slots including the 5 "left side"
+armors and 5 "right side" accessories.
+
+.. code-block:: text
+
+   [ { "id": uint, "variant": byte, "stain0": byte, "stain1": byte } ]
 
 See :ref:`sighting-schema` in :doc:`data_model` for the ``Sighting`` schema, which is
 the core payload of this endpoint, and the ``IngestBatch``/``Sighting`` C# code in
@@ -455,13 +462,18 @@ that page's type catalogue.
                "z": 0,
                "jobId": 24,
                "level": 90,
-               "homeWorldName": "<homeWorldName>",
+               "fcTag": "<fcTag>",
+               "customizeBase64": "<customizeBase64>",
                "seenAtUtc": "<seenAtUtc>",
                "source": "sweep",
+               "accountId": "<accountId>",
                "titleId": 0,
                "grandCompany": 0,
+               "equipment": [],
                "mainhandModel": 0,
                "offhandModel": 0,
+               "homeWorldName": "<homeWorldName>",
+               "reporter": {},
                "mountId": 0,
                "onlineStatusId": 0,
                "dutyId": 0,
@@ -1269,7 +1281,6 @@ server — everything before it was setup:
                "contentId": "1152921530918442017",
                "name": "Alisaie Leveilleur",
                "homeWorldId": 63,
-               "homeWorldName": "Balmung",
                "currentWorldId": 63,
                "territoryId": 401,
                "x": 14.1,
@@ -1298,6 +1309,8 @@ server — everything before it was setup:
                ],
                "mainhandModel": 3200101,
                "offhandModel": 0,
+               "homeWorldName": "Balmung",
+               "reporter": { "territoryId": 401, "x": 12.4, "y": 8.0, "z": -33.7 },
                "mountId": 0,
                "onlineStatusId": 47,
                "dutyId": 0,
@@ -1307,7 +1320,6 @@ server — everything before it was setup:
                "contentId": "1152921540217701933",
                "name": "Y\u0027shtola Rhul",
                "homeWorldId": 63,
-               "homeWorldName": "Balmung",
                "currentWorldId": 63,
                "territoryId": 401,
                "x": 11.8,
@@ -1336,6 +1348,8 @@ server — everything before it was setup:
                ],
                "mainhandModel": 3300201,
                "offhandModel": 3300202,
+               "homeWorldName": "Balmung",
+               "reporter": { "territoryId": 401, "x": 12.4, "y": 8.0, "z": -33.7 },
                "mountId": 0,
                "onlineStatusId": 47,
                "dutyId": 0,
@@ -1345,7 +1359,6 @@ server — everything before it was setup:
                "contentId": "1152921551606339842",
                "name": "Alphinaud Leveilleur",
                "homeWorldId": 63,
-               "homeWorldName": "Balmung",
                "currentWorldId": 63,
                "territoryId": 401,
                "x": 13.0,
@@ -1373,6 +1386,8 @@ server — everything before it was setup:
                ],
                "mainhandModel": 3400301,
                "offhandModel": 0,
+               "homeWorldName": "Balmung",
+               "reporter": { "territoryId": 401, "x": 12.4, "y": 8.0, "z": -33.7 },
                "mountId": 0,
                "onlineStatusId": 47,
                "dutyId": 0,
