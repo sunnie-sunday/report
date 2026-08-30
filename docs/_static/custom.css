@@ -80,6 +80,10 @@ div.sphinxsidebar a {
 	color: #76cce0;
 }
 
+div.sphinxsidebar code {
+	font-size: 11px;
+}
+
 div.sphinxsidebar input {
 	border-color: #3b3e48;
 	background-color: #33353f;
@@ -106,8 +110,13 @@ div.body h6 {
 	border-bottom: 1px solid #3b3e48;
 }
 
-div.body h3 {
+div.body h3 , div.body h3 code {
 	color: #9ed072;
+}
+
+div.body h3 code {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: inherit;
 }
 
 div.body table {
