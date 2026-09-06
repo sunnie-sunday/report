@@ -2,7 +2,7 @@ Setsna Kurosaki
 ###############
 
 :world: Shiva
-:avatar_url: https://img2.finalfantasyxiv.com/f/b4049d2862aa715a4ed956bc31bdbeca_3fbff0e6b620e4d259dc427abc6574dafc0.jpg?1786598355
+:avatar_url: https://img2.finalfantasyxiv.com/f/b4049d2862aa715a4ed956bc31bdbeca_3fbff0e6b620e4d259dc427abc6574dafc0.jpg
 :seen: Limsa Lominsa Lower Decks@Shiva
 :utc: 2026-08-07T00:46:36.5428940+00:00
 :character_title: The Ultimate Legend

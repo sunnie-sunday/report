@@ -2,7 +2,7 @@ Michael Fairclough
 ##################
 
 :world: Mateus
-:avatar_url: https://img2.finalfantasyxiv.com/f/091bd68807d27b4cc7d2161705aee6f3_f0c52cc66e124fc2e641d7c21ab2ce79fc0.jpg?1785891631
+:avatar_url: https://img2.finalfantasyxiv.com/f/091bd68807d27b4cc7d2161705aee6f3_f0c52cc66e124fc2e641d7c21ab2ce79fc0.jpg
 :seen: Ul'dah - Steps of Nald@Balmung
 :utc: 2026-07-31T19:07:05.2734647+00:00
 :character_title: Saint of the Firmament

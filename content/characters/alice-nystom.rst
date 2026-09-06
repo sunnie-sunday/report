@@ -2,7 +2,7 @@ Alice Nystom
 ############
 
 :world: Excalibur
-:avatar_url: https://img2.finalfantasyxiv.com/f/323915f7cf4cfc3c1474f95258dc380b_745baffc465480ed372e274d50318290fc0.jpg?1785893267
+:avatar_url: https://img2.finalfantasyxiv.com/f/323915f7cf4cfc3c1474f95258dc380b_745baffc465480ed372e274d50318290fc0.jpg
 :seen: Ul'dah - Steps of Nald@Balmung
 :utc: 2026-07-31T18:25:41.6295221+00:00
 :character_title: Cruel Legend

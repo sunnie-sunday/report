@@ -2,7 +2,7 @@ Muwu Achuu
 ##########
 
 :world: Siren
-:avatar_url: https://img2.finalfantasyxiv.com/f/19210165aaca9a09c0cf24450029ff49_58a84e851e55175d22158ca97af58a1ffc0.jpg?1785892141
+:avatar_url: https://img2.finalfantasyxiv.com/f/19210165aaca9a09c0cf24450029ff49_58a84e851e55175d22158ca97af58a1ffc0.jpg
 :seen: Ul'dah - Steps of Nald@Balmung
 :utc: 2026-07-31T18:24:24.3608860+00:00
 :character_title: The Enlightened

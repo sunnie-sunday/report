@@ -2,7 +2,7 @@ Yisu Geneq
 ##########
 
 :world: Faerie
-:avatar_url: https://img2.finalfantasyxiv.com/f/f885daf15655cc5e36574cb9f29a3efe_0e336ff6ad415f47233f0aaf127feac0fc0.jpg?1786848020
+:avatar_url: https://img2.finalfantasyxiv.com/f/f885daf15655cc5e36574cb9f29a3efe_0e336ff6ad415f47233f0aaf127feac0fc0.jpg
 :seen: Eastern La Noscea@Faerie
 :utc: 2026-08-15T16:38:48.5907975+00:00
 :character_title: Overemployed

@@ -2,7 +2,7 @@ Lo Dps
 ######
 
 :world: Kraken
-:avatar_url: https://img2.finalfantasyxiv.com/f/8ac6aab30778c78c08aaa67ab986aa16_049a956dfeb0eb2e19c417a1dde4d680fc0.jpg?1785892981
+:avatar_url: https://img2.finalfantasyxiv.com/f/8ac6aab30778c78c08aaa67ab986aa16_049a956dfeb0eb2e19c417a1dde4d680fc0.jpg
 :seen: Limsa Lominsa Lower Decks@Kraken
 :utc: 2026-08-01T05:41:14.8075519+00:00
 :character_title: Stargazer

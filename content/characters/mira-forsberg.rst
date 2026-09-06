@@ -2,7 +2,7 @@ Mira Forsberg
 #############
 
 :world: Balmung
-:avatar_url: https://img2.finalfantasyxiv.com/f/de47d47ad2e8633defcf4e9cb41337dc_7a573cbc0cda3a3dfc1795cb3d9f7b23fc0.jpg?1788045619
+:avatar_url: https://img2.finalfantasyxiv.com/f/de47d47ad2e8633defcf4e9cb41337dc_7a573cbc0cda3a3dfc1795cb3d9f7b23fc0.jpg
 :seen: New Gridania@Balmung
 :utc: 2026-08-26T16:09:12.5887140+00:00
 :job: DRG
