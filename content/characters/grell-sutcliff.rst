@@ -1,5 +1,5 @@
-Grell Sutcliff
-##############
+Rei Ryghts
+##########
 
 :world: Excalibur
 :avatar_url: https://img2.finalfantasyxiv.com/f/946d35c20d76b992d40096ef7c29076e_745baffc465480ed372e274d50318290fc0.jpg
@@ -11,6 +11,7 @@ Grell Sutcliff
 :lodestone_id: 11865425
 :fc_name: Potato Knights
 :fc_lodestone_id: 9236460623271952813
+:aka: Grell Sutcliff@Excalibur
 
 .. include:: grell-sutcliff.log
    :literal:
