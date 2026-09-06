@@ -8,7 +8,7 @@ Rie Vassa
 :job: GSM
 :level: 100
 :lodestone_id: 60165751
-:fc_tag: toot
+:fc_name: toot
 :fc_lodestone_id: 9232519973598047663
 
 .. include:: rie-vassa.log

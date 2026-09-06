@@ -9,7 +9,7 @@ Vrchat Eboy
 :job: RDM
 :level: 100
 :lodestone_id: 41007569
-:fc_tag: Pearl
+:fc_name: The Black Pearl
 :fc_lodestone_id: 9232519973597984191
 
 .. include:: vrchat-eboy.log

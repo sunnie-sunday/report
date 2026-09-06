@@ -9,7 +9,7 @@ Saphi Ryukari
 :job: SAM
 :level: 100
 :lodestone_id: 37648152
-:fc_tag: 3c
+:fc_name: Cat Shelter
 :fc_lodestone_id: 9235053248388333051
 
 .. include:: saphi-ryukari.log

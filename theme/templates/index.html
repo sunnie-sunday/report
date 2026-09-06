@@ -77,7 +77,7 @@
 			<div class="bio" id="bio-{{ loop.index }}" hidden>
 				{{ character.content|safe }}
 				<a class="bio-source-link" href="{{ SITEURL }}/characters/{{ character.slug }}.log" type="text/plain" target="_blank" rel="noopener noreferrer">View source</a>
-				{% if character.lodestone_id or character.fc_tag or character.fc_lodestone_id or character.seen or character.utc or character.character_title or character.job %}
+				{% if character.lodestone_id or character.fc_name or character.fc_lodestone_id or character.seen or character.utc or character.character_title or character.job %}
 				<footer class="bio-footer">
 					<table>
 						{% if character.seen %}
@@ -96,9 +96,9 @@
 						{% if character.lodestone_id %}
 						<tr><th>Lodestone</th><td><a href="https://na.finalfantasyxiv.com/lodestone/character/{{ character.lodestone_id }}/" target="_blank" rel="noopener noreferrer"><span class="url-full">https://na.finalfantasyxiv.com/lodestone/character/{{ character.lodestone_id }}/</span><span class="url-id">{{ character.lodestone_id }}</span></a></td></tr>
 						{% endif %}
-						{% if character.fc_tag %}
+						{% if character.fc_name %}
 						<tr class="spacer"><td colspan="2"></td></tr>
-						<tr><th>FC Tag</th><td>&laquo;{{ character.fc_tag }}&raquo;</td></tr>
+						<tr><th>FC Name</th><td>&laquo;{{ character.fc_name }}&raquo;</td></tr>
 						{% endif %}
 						{% if character.fc_lodestone_id %}
 						<tr><th>FC Lodestone</th><td><a href="https://na.finalfantasyxiv.com/lodestone/freecompany/{{ character.fc_lodestone_id }}/" target="_blank" rel="noopener noreferrer"><span class="url-full">https://na.finalfantasyxiv.com/lodestone/freecompany/{{ character.fc_lodestone_id }}/</span><span class="url-id">{{ character.fc_lodestone_id }}</span></a></td></tr>

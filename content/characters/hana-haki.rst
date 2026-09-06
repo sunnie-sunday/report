@@ -8,7 +8,7 @@ Hana Haki
 :job: MCH
 :level: 100
 :lodestone_id: 45276165
-:fc_tag: Bliss
+:fc_name: Bliss
 :fc_lodestone_id: 9230971861226100580
 
 .. include:: hana-haki.log

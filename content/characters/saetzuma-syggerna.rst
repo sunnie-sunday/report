@@ -10,7 +10,7 @@ Saetzuma Syggerna
 :job: SCH
 :level: 100
 :lodestone_id: 23168188
-:fc_tag: Fable
+:fc_name: Crystal Fables
 :fc_lodestone_id: 9236179148295247045
 
 .. include:: saetzuma-syggerna.log

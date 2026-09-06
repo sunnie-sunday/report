@@ -9,7 +9,7 @@ Veyla Sylvang
 :job: DRK
 :level: 100
 :lodestone_id: 47189820
-:fc_tag: Leaf
+:fc_name: The Cozy Leaf
 :fc_lodestone_id: 9228438586435722243
 
 .. include:: veyla-sylvang.log

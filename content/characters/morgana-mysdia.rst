@@ -9,7 +9,7 @@ Morgana Mysdia
 :job: WHM
 :level: 100
 :lodestone_id: 31876611
-:fc_tag: Biggr
+:fc_name: Nikkiel's Resort
 :fc_lodestone_id: 9234208823458296171
 
 .. include:: morgana-mysdia.log

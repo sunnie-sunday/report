@@ -9,7 +9,7 @@ Kx Nunu
 :job: WHM
 :level: 100
 :lodestone_id: 11539517
-:fc_tag: Sky
+:fc_name: Imperial
 :fc_lodestone_id: 9237023573225415132
 
 .. include:: kx-nunu.log

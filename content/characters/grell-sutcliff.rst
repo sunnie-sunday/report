@@ -9,7 +9,7 @@ Grell Sutcliff
 :job: BSM
 :level: 100
 :lodestone_id: 11865425
-:fc_tag: Lala
+:fc_name: Potato Knights
 :fc_lodestone_id: 9236460623271952813
 
 .. include:: grell-sutcliff.log

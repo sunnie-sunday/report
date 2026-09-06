@@ -9,7 +9,7 @@ Hody Jones
 :job: GNB
 :level: 100
 :lodestone_id: 7407339
-:fc_tag: Blep?
+:fc_name: Hody's Taco Kingdom
 :fc_lodestone_id: 9236179148295293668
 
 .. include:: hody-jones.log

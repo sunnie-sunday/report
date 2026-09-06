@@ -9,7 +9,7 @@ Alice Furukane
 :job: RDM
 :level: 92
 :lodestone_id: 21711781
-:fc_tag: Mushu
+:fc_name: Lunar Dragons
 :fc_lodestone_id: 9229001536389117963
 
 .. include:: alice-furukane.log

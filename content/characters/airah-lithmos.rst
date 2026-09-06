@@ -9,7 +9,7 @@ Airah Lithmos
 :job: SGE
 :level: 100
 :lodestone_id: 47865115
-:fc_tag: Draco
+:fc_name: Church Of The Dragon
 :fc_lodestone_id: 9234208823458289092
 
 .. include:: airah-lithmos.log

@@ -8,7 +8,7 @@ Aiki Mittens
 :job: WHM
 :level: 100
 :lodestone_id: 47592644
-:fc_tag: G'
+:fc_name: San d'Oria
 :fc_lodestone_id: 9231112598714348854
 
 .. include:: aiki-mittens.log

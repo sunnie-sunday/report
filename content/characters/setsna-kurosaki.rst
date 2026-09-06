@@ -9,7 +9,7 @@ Setsna Kurosaki
 :job: BLM
 :level: 100
 :lodestone_id: 19220702
-:fc_tag: TM
+:fc_name: Timber Maniacs
 :fc_lodestone_id: 9232801448574614799
 
 .. include:: setsna-kurosaki.log

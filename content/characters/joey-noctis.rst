@@ -9,7 +9,7 @@ Joey Noctis
 :job: PCT
 :level: 100
 :lodestone_id: 59825183
-:fc_tag: Moony
+:fc_name: Cabbits on the Moon
 :fc_lodestone_id: 9228438586435745747
 
 .. include:: joey-noctis.log

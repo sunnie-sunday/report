@@ -9,7 +9,7 @@ Moirenna Yue
 :job: BRD
 :level: 60
 :lodestone_id: 20267421
-:fc_tag: SADGE
+:fc_name: The Honey
 :fc_lodestone_id: 9230268173784315917
 
 .. include:: moirenna-yue.log

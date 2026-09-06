@@ -9,7 +9,7 @@ Muwu Achuu
 :job: MCH
 :level: 100
 :lodestone_id: 10431569
-:fc_tag: Cuddl
+:fc_name: DropBears
 :fc_lodestone_id: 9231394073691195514
 
 .. include:: muwu-achuu.log

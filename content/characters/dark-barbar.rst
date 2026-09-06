@@ -9,7 +9,7 @@ Dark Barbar
 :job: GNB
 :level: 100
 :lodestone_id: 37495150
-:fc_tag: Dark
+:fc_name: The Dark Shadows
 :fc_lodestone_id: 9232801448574733840
 
 .. include:: dark-barbar.log

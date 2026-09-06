@@ -9,7 +9,7 @@ Yisu Geneq
 :job: BLM
 :level: 100
 :lodestone_id: 46808683
-:fc_tag: SHRMP
+:fc_name: Shrimplicity
 :fc_lodestone_id: 9230971861226115098
 
 .. include:: yisu-geneq.log

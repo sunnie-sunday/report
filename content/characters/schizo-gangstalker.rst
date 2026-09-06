@@ -8,7 +8,7 @@ Schizo Gangstalker
 :job: GNB
 :level: 100
 :lodestone_id: 61224196
-:fc_tag: GT
+:fc_name: Grand Tour
 :fc_lodestone_id: 9229001536389143951
 
 .. include:: schizo-gangstalker.log

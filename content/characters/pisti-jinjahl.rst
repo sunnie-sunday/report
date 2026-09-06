@@ -9,7 +9,7 @@ Pisti Jinjahl
 :job: PCT
 :level: 100
 :lodestone_id: 43865878
-:fc_tag: EVER
+:fc_name: Everhold
 :fc_lodestone_id: 9280229982150351415
 
 .. include:: pisti-jinjahl.log

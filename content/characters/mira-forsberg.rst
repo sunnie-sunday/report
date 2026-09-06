@@ -8,7 +8,7 @@ Mira Forsberg
 :job: DRG
 :level: 64
 :lodestone_id: 61169753
-:fc_tag: CLM
+:fc_name: Caelum Academy
 :fc_lodestone_id: 9236179148295223669
 
 .. include:: mira-forsberg.log

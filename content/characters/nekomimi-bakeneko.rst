@@ -9,7 +9,7 @@ Nekomimi Bakeneko
 :job: MCH
 :level: 100
 :lodestone_id: 48231370
-:fc_tag: CHAOS
+:fc_name: Umbral Calamity
 :fc_lodestone_id: 9280370719638684654
 
 .. include:: nekomimi-bakeneko.log

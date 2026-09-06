@@ -8,7 +8,7 @@ Hana Song
 :job: MCH
 :level: 100
 :lodestone_id: 36116861
-:fc_tag: WOOF
+:fc_name: FLUFFY MARSHMALLOW
 :fc_lodestone_id: 9228016373970504080
 
 .. include:: hana-song.log

@@ -9,7 +9,7 @@ Lo Dps
 :job: MNK
 :level: 53
 :lodestone_id: 59845227
-:fc_tag: KUPO!
+:fc_name: Mogs of War
 :fc_lodestone_id: 9280933669592126662
 
 .. include:: lo-dps.log

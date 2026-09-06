@@ -9,7 +9,7 @@ Pawde Paw
 :job: SAM
 :level: 100
 :lodestone_id: 40795954
-:fc_tag: Devil
+:fc_name: DeviIChan
 :fc_lodestone_id: 9232238498621324497
 
 .. include:: pawde-paw.log

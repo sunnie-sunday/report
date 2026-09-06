@@ -9,7 +9,7 @@ Michael Fairclough
 :job: MNK
 :level: 100
 :lodestone_id: 59845227
-:fc_tag: Hero
+:fc_name: Hero
 :fc_lodestone_id: 9228579323924041993
 
 .. include:: michael-fairclough.log

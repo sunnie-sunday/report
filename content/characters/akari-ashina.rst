@@ -9,7 +9,7 @@ Akari Ashina
 :job: WHM
 :level: 100
 :lodestone_id: 36612489
-:fc_tag: ;w;
+:fc_name: gladge
 :fc_lodestone_id: 9228438586435647159
 
 .. include:: akari-ashina.log

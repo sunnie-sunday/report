@@ -9,7 +9,7 @@ Rokurito Nanarito
 :job: DNC
 :level: 100
 :lodestone_id: 60733943
-:fc_tag: maiDX
+:fc_name: maimaiDX CiRCLE PLUS
 :fc_lodestone_id: 9281074407080484432
 
 .. include:: rokurito-nanarito.log

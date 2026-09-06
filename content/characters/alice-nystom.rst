@@ -9,7 +9,7 @@ Alice Nystom
 :job: DRK
 :level: 100
 :lodestone_id: 42126460
-:fc_tag: Bo
+:fc_name: chocobo
 :fc_lodestone_id: 9236460623271886834
 
 .. include:: alice-nystom.log

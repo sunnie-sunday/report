@@ -8,7 +8,7 @@ Evelyn Jade
 :job: MIN
 :level: 97
 :lodestone_id: 60348742
-:fc_tag: Wi-Fi
+:fc_name: Eterna
 :fc_lodestone_id: 9280511457127075013
 
 .. include:: evelyn-jade.log

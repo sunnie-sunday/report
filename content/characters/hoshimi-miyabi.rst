@@ -9,7 +9,7 @@ Hoshimi Miyabi
 :job: SAM
 :level: 100
 :lodestone_id: 55523421
-:fc_tag: FRG
+:fc_name: Friends Are Great
 :fc_lodestone_id: 9230971861226116562
 
 .. include:: hoshimi-miyabi.log
