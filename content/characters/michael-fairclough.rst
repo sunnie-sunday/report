@@ -8,7 +8,7 @@ Michael Fairclough
 :character_title: Saint of the Firmament
 :job: MNK
 :level: 100
-:lodestone_id: 59845227
+:lodestone_id: 14903427
 :fc_name: Hero
 :fc_lodestone_id: 9228579323924041993
 
