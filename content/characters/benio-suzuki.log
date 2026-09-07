@@ -1,0 +1,48 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.4"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Sat, 05 Sep 2026 12:45:10 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+
+{
+	"uploaderId": "2da84bef-72ae-4bec-a3b8-b05afacccf99",
+	"apiKey": "eak_2a28cdc5c4e92b9917543dc7a97be23566ca8e3cd89ab2b1d5eadf866120520e",
+	"hmacSecret": "tp3bCdBMdLUx0LF3MT/hzkqYRTB1z09nRmyV8nxlYdE="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 2da84bef-72ae-4bec-a3b8-b05afacccf99
+X-Echo-Timestamp: 1788612311
+X-Echo-Nonce: a11bafaa51ed4cd291451827f50bdfdd
+X-Echo-Signature: 7e56b07bb97aec8ab8ad1826b3d25caefb77e89f4cbb5804c778b8e61a1955d2
+Content-Length: 135
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "39946874",
+	"characterName": "Benio Suzuki",
+	"homeWorldName": "Phoenix",
+	"contentId": "18014598549333965"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Sat, 05 Sep 2026 12:45:11 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+
+{
+	"error": "already_claimed"
+}

@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.4"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Sat, 05 Sep 2026 07:48:22 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=3,cfOrigin;dur=149
+
+{
+	"uploaderId": "77f68c6b-b2de-478c-b5a0-7c0f50deaf2b",
+	"apiKey": "eak_a995eceb2c79253a5954cf450596b69aa80fc81cc0bfce6ec6a5853e8c5fd788",
+	"hmacSecret": "3Sce28BsjmW1jiFgZib6ewFxT9cVwEdbHFYF/rG9tp4="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: 77f68c6b-b2de-478c-b5a0-7c0f50deaf2b
+X-Echo-Timestamp: 1788594505
+X-Echo-Nonce: ad0851a0d1c1468ca1cba7d8c5be15e8
+X-Echo-Signature: c2870fc9e244a14324603a64d7b012aa0ff55fd029a8a37740bbe59421a05ce3
+Content-Length: 134
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "2674557",
+	"characterName": "Zehao Xiang",
+	"homeWorldName": "Ragnarok",
+	"contentId": "18014498539936942"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Sat, 05 Sep 2026 07:48:25 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=2,cfOrigin;dur=158
+
+{
+	"error": "already_claimed"
+}

@@ -1,0 +1,50 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.4"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Sun, 30 Aug 2026 19:40:09 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=68,cfOrigin;dur=418
+
+{
+	"uploaderId": "a9d42c46-3bc1-43c1-b91c-e68cdd2c7c59",
+	"apiKey": "eak_e276910f08a2642b2cb043ac0d945a15d3834a0a66d2f552c3616a8fbb4ce504",
+	"hmacSecret": "c6UeQSlsctkraV6DLMABH114Hqde0oFU/yrYpMzfPCA="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: a9d42c46-3bc1-43c1-b91c-e68cdd2c7c59
+X-Echo-Timestamp: 1788118811
+X-Echo-Nonce: 5e319b04a4c44c6b8eb91364b34fb370
+X-Echo-Signature: f66689ae6a9d426a4716e851a6df75fadcf10cb6f0c65fddc9d6ecbed57ceff1
+Content-Length: 141
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "52862466",
+	"characterName": "Azuki Koshian",
+	"homeWorldName": "Pandaemonium",
+	"contentId": "18014398555753018"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Sun, 30 Aug 2026 19:40:11 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+Server-Timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=69,cfOrigin;dur=138
+
+{
+	"error": "already_claimed"
+}

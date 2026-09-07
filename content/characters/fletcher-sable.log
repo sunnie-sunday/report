@@ -1,0 +1,48 @@
+POST https://echovault.gg/v1/auth/register HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Content-Length: 48
+
+{
+	"protocolVersion": 2,
+	"pluginVersion": "0.8.4"
+}
+
+HTTP/1.1 200 OK https://echovault.gg/v1/auth/register
+Date: Wed, 02 Sep 2026 16:53:54 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+
+{
+	"uploaderId": "ad6e3885-e456-45f1-85de-9d9ae5ad8d24",
+	"apiKey": "eak_160c83294c1ba7179e7b2864df8c0d6de6298d26f1776831770ed10fdc89ab8e",
+	"hmacSecret": "3Re+YAYb8k9PbroXgfUPFoJSajlR0wdfgA+N22zaZ1Q="
+}
+
+POST https://echovault.gg/v1/auth/verify/start HTTP/1.1
+Content-Type: application/json; charset=utf-8
+X-Echo-KeyId: ad6e3885-e456-45f1-85de-9d9ae5ad8d24
+X-Echo-Timestamp: 1788368035
+X-Echo-Nonce: 47530b45f6e44514b6280b5345828960
+X-Echo-Signature: 1d005735c1d164618d8dbe5df96a4cc25c92b629bc8260cf4db9a0a270b3de74
+Content-Length: 136
+
+{
+	"protocolVersion": 2,
+	"lodestoneId": "51609421",
+	"characterName": "Fletcher Sable",
+	"homeWorldName": "Faerie",
+	"contentId": "18014498574117920"
+}
+
+HTTP/1.1 409 Conflict https://echovault.gg/v1/auth/verify/start
+Date: Wed, 02 Sep 2026 16:53:55 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: cloudflare
+
+{
+	"error": "already_claimed"
+}
