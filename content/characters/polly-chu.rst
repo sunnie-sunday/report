@@ -9,7 +9,6 @@ Polly Chu
 :job: SCH
 :level: 100
 :lodestone_id: 37514756
-.. :fc_tag: Waltz
 
 .. include:: polly-chu.log
    :literal:
