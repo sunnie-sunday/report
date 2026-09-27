@@ -1,0 +1,14 @@
+	<footer class="site-footer">
+		<div class="footer-inner">
+			<span>With love (&#x2665;&#xFE0E;) from {{ site.Params.author }}</span>
+			<nav class="footer-links">
+				{{ if not .IsHome }}
+				<a href="{{ "/" | relURL }}">Characters</a>
+				<span class="footer-separator">&middot;</span>
+				{{ end }}
+				<a href="{{ "docs/" | relURL }}">Documentation</a>
+				<span class="footer-separator">&middot;</span>
+				<a href="https://github.com/sunnie-sunday/report">GitHub</a>
+			</nav>
+		</div>
+	</footer>

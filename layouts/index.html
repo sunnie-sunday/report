@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+<body>
+	<header class="site-header">
+		<div class="site-header-top">
+			<h1>{{ site.Title }}</h1>
+			<div class="share-links">
+				<span class="share-label">Share:</span>
+				<a class="share-link" href="https://twitter.com/intent/tweet?url={{ .Permalink | urlquery }}" target="_blank" rel="noopener noreferrer">X</a>
+				<span class="share-separator">&middot;</span>
+				<a class="share-link" href="https://bsky.app/intent/compose?text={{ .Permalink | urlquery }}" target="_blank" rel="noopener noreferrer">Bluesky</a>
+			</div>
+		</div>
+		<div class="site-description">
+			<h2>{{ .Title }}</h2>
+			{{ .Content }}
+		</div>
+	</header>
+
+	<main class="roster">
+		{{ $avatarDefault := "images/avatar-default.png" | relURL }}
+		{{ $characters := where (site.GetPage "characters").Pages "Params.world" "!=" nil }}
+		{{ $characters = sort $characters "Params.utc" "desc" }}
+		{{ range $index, $char := $characters }}
+		{{ $n := add $index 1 }}
+		{{ $bioID := printf "bio-%d" $n }}
+		<section class="character">
+			<div class="character-row">
+				<div class="character-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="{{ $bioID }}">
+					<img class="avatar" src="{{ $char.Params.avatar_url | default $avatarDefault }}" onerror="this.onerror=null;this.src='{{ $avatarDefault }}';" alt="" width="48" height="48">
+					<span class="identity">
+						<span class="name">
+							{{ $char.Params.name }}{{ if $char.Params.expired }}
+							<span class="badge-expired" title="This character hasn't contributed to EchoVault for over 60 days.">
+								Expired</span>{{ end }}
+							</span>
+						<span class="world">{{ $char.Params.world }}</span>
+					</span>
+					<span class="toggle-indicator" aria-hidden="true"></span>
+				</div>
+			</div>
+			<div class="bio">
+				<div class="bio-content" id="{{ $bioID }}" hidden>
+					<div class="bio-text">{{ $char.Content }}</div>
+				</div>
+				<footer class="bio-footer">
+					<table>
+						{{ with $char.Params.seen }}
+						{{ $parts := split . "-" }}
+						{{ $short := strings.TrimSpace (index $parts (sub (len $parts) 1)) }}
+						<tr>
+							<th>Location seen</th>
+							<td><span class="seen-full">{{ . }}</span><span class="seen-short">{{ $short }}</span></td>
+						</tr>
+						{{ end }}
+						{{ with $char.Params.utc }}
+						<tr><th>Time seen</th><td><time datetime="{{ . }}">{{ . }}</time></td></tr>
+						{{ end }}
+						<tr class="spacer"><td colspan="2"></td></tr>
+						{{ with $char.Title }}
+						<tr><th>Title</th><td>{{ . }}</td></tr>
+						{{ end }}
+						{{ with $char.Params.job }}
+						<tr><th>Job</th><td>{{ . }}{{ with $char.Params.level }} Lv. {{ . }}{{ end }}</td></tr>
+						{{ end }}
+						{{ with $char.Params.lodestone_id }}
+						<tr>
+							<th>Lodestone</th>
+							<td>
+								<a href="https://na.finalfantasyxiv.com/lodestone/character/{{ . }}/" target="_blank" rel="noopener noreferrer">
+									<span class="url-full">https://na.finalfantasyxiv.com/lodestone/character/{{ . }}/</span><span class="url-id">{{ . }}</span>
+								</a>
+							</td>
+						</tr>
+						{{ end }}
+						{{ with $char.Params.fc_name }}
+						<tr class="spacer"><td colspan="2"></td></tr>
+						<tr><th>FC Name</th><td>{{ . }}</td></tr>
+						{{ end }}
+						{{ with $char.Params.fc_lodestone_id }}
+						<tr>
+							<th>FC Lodestone</th>
+							<td>
+								<a href="https://na.finalfantasyxiv.com/lodestone/freecompany/{{ . }}/" target="_blank" rel="noopener noreferrer">
+									<span class="url-full">https://na.finalfantasyxiv.com/lodestone/freecompany/{{ . }}/</span><span class="url-id">{{ . }}</span>
+								</a>
+							</td>
+						</tr>
+						{{ end }}
+						<tr class="spacer"><td colspan="2"></td></tr>
+						{{ if $char.Params.expired }}
+						<tr><th>Activity</th><td class="activity-expired">This character hasn't contributed to EchoVault for over 60 days.</td></tr>
+						{{ else }}
+						<tr><th>Activity</th><td class="activity-active">This character has contributed to EchoVault within the last 60 days.</td></tr>
+						{{ end }}
+						{{ with $char.Params.aka }}
+						<tr><th>Also known as</th><td>{{ . }}</td></tr>
+						{{ end }}
+						{{ with $char.Params.transfers }}
+						<tr><th>Transfers</th><td>{{ . }}</td></tr>
+						{{ end }}
+					</table>
+				</footer>
+			</div>
+		</section>
+		{{ else }}
+		<p class="empty">No characters yet.</p>
+		{{ end }}
+	</main>
+
+	<section class="reviews">
+		<h2>Reviews</h2>
+		<article class="review">
+			<span class="review-rating" role="img" aria-label="1 out of 5 stars">
+				<img src="{{ "images/star-filled.png" | relURL }}" alt="" width="16" height="16">
+				<img src="{{ "images/star-empty.png" | relURL }}" alt="" width="16" height="16">
+				<img src="{{ "images/star-empty.png" | relURL }}" alt="" width="16" height="16">
+				<img src="{{ "images/star-empty.png" | relURL }}" alt="" width="16" height="16">
+				<img src="{{ "images/star-empty.png" | relURL }}" alt="" width="16" height="16">
+			</span>
+			<q class="review-text">Attacker is still attacking and trying to get through even though he is too stupid to get the version number right.</q>
+			<span class="review-author">&mdash; Echo Vault Dev</span>
+		</article>
+		<article class="review">
+			<span class="review-rating" role="img" aria-label="1 out of 5 stars">
+				<img src="{{ "images/star-filled.png" | relURL }}" alt="" width="16" height="16">
+				<img src="{{ "images/star-empty.png" | relURL }}" alt="" width="16" height="16">
+				<img src="{{ "images/star-empty.png" | relURL }}" alt="" width="16" height="16">
+				<img src="{{ "images/star-empty.png" | relURL }}" alt="" width="16" height="16">
+				<img src="{{ "images/star-empty.png" | relURL }}" alt="" width="16" height="16">
+			</span>
+			<q class="review-text">All this effort for the identities of 10 alts who cares.</q>
+			<span class="review-author">&mdash; Anon</span>
+		</article>
+	</section>
+
+{{ partial "footer.html" . }}
+
+	<script src="{{ "js/accordion.js" | relURL }}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="{{ "js/request.js" | relURL }}"></script>
+	<script src="{{ "js/validator.js" | relURL }}"></script>
+</body>
+</html>

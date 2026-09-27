@@ -1,0 +1,33 @@
+baseURL = "/"
+title = "Sunnie Sunday Report"
+publishDir = "output"
+
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT", "404"]
+
+[markup.goldmark.extensions.typographer]
+  disable = true
+
+# Chroma syntax highlighting for docs code blocks
+[markup.highlight]
+  noClasses = false
+  style = "bw"
+
+# Suppress individual character pages
+[[cascade]]
+  [cascade.build]
+    render = "never"
+  [cascade.target]
+    kind = "section"
+    path = "/characters"
+
+[[cascade]]
+  [cascade.build]
+    render = "never"
+  [cascade.target]
+    kind = "page"
+    path = "/characters/**"
+
+[params]
+  author = "/xivg/"
+  # One of the files in static/css/themes/, without the .css extension
+  colorTheme = "sonokai-dark"

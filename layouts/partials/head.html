@@ -1,0 +1,44 @@
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} &middot; {{ site.Title }}{{ end }}</title>
+	<meta name="description" content="{{ .Title }}">
+	<link rel="canonical" href="{{ .Permalink }}">
+	<meta name="theme-color" content="#f39660">
+	<!-- Open Graph -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="{{ site.Title }}">
+	<meta property="og:description" content="{{ .Title }}">
+	<meta property="og:url" content="{{ .Permalink }}">
+	<meta property="og:image" content="{{ "/images/preview.png" | relURL }}">
+	<meta property="og:image:type" content="image/png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<!-- X -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="{{ site.Title }}">
+	<meta name="twitter:description" content="{{ .Title }}">
+	<meta name="twitter:site" content="@EchoUnvaulted">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="{{ "/images/preview.png" | relURL }}">
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://cdn.jsdelivr.net">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/roboto@5.3.0/latin-400.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/roboto@5.3.0/latin-400-italic.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/roboto@5.3.0/latin-700.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/roboto@5.3.0/latin-700-italic.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/roboto-condensed@5.3.0/latin-400.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/roboto-condensed@5.3.0/latin-400-italic.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/roboto-condensed@5.3.0/latin-700.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/roboto-condensed@5.3.0/latin-700-italic.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/dejavu-mono@5.3.0/latin-400.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/dejavu-mono@5.3.0/latin-400-italic.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/dejavu-mono@5.3.0/latin-700.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/dejavu-mono@5.3.0/latin-700-italic.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="{{ "css/base.css" | relURL }}">
+	<link rel="stylesheet" href="{{ "css/base-hugo.css" | relURL }}">
+	<link rel="stylesheet" href="{{ "css/chroma.css" | relURL }}">
+	<link rel="stylesheet" href="{{ "css/validator.css" | relURL }}">
+	<link rel="stylesheet" href="{{ printf "css/themes/%s.css" site.Params.colorTheme | relURL }}">
+</head>

@@ -1,0 +1,194 @@
+.site-header h1 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.bio-footer {
+	margin-top: 0;
+	padding-top: 0;
+	border-top: none;
+}
+
+.bio-footer th {
+	font-weight: bold;
+}
+
+.bio-content {
+	margin-bottom: 0.75rem;
+	padding-bottom: 0.75rem;
+	border-bottom: 1px dashed var(--bio-border);
+}
+
+.activity-expired {
+	color: var(--red);
+}
+
+.activity-active {
+	color: var(--purple);
+}
+
+.bio-text pre {
+	margin: 0;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+	word-break: break-word;
+	font: inherit;
+	font-size: 10px;
+}
+
+.bio-text pre code {
+	font: inherit;
+}
+
+.highlight + .highlight {
+	margin-top: 1rem;
+}
+
+.bio-popup-trigger {
+	display: none;
+}
+
+.seen-short {
+	display: none;
+}
+
+.badge-expired {
+	display: inline-block;
+	margin-left: 0.5em;
+	padding: 0.05em 0.5em;
+	border-radius: 999px;
+	background: var(--red);
+	color: #fff;
+	font-size: 0.7rem;
+	font-weight: 600;
+	vertical-align: middle;
+}
+
+.docs-body {
+	flex: 1 0 auto;
+	max-width: 40rem;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.docs-body h1 {
+	margin: 0 0 1rem;
+	font-size: 1.5rem;
+	font-weight: normal;
+	color: var(--title-fg, var(--accent));
+}
+
+.docs-body h2,
+.docs-body h3 {
+	margin: 1.5rem 0 0.5rem;
+	font-size: 1.1rem;
+	color: var(--title-fg, var(--accent));
+}
+
+.docs-body p,
+.docs-body table {
+	margin: 1rem 0 0;
+}
+
+.docs-body p:first-child,
+.docs-body ul:first-child,
+.docs-body ol:first-child {
+  margin-top: 0;
+}
+
+.docs-body li + li {
+  margin-top: 0.5rem;
+}
+
+.docs-body a,
+.docs-body a:visited {
+	color: var(--link, var(--accent));
+	text-decoration: none;
+}
+
+.docs-body a:hover {
+	color: var(--fg);
+	text-decoration: underline;
+}
+
+.docs-body code {
+	padding: 0 1px;
+	font-size: 0.95em;
+	background-color: var(--code-bg, var(--border));
+	color: var(--code-fg, var(--fg));
+	font-family: 'DejaVu Mono', monospace;
+}
+
+.docs-body pre {
+	margin: 1rem 0 0;
+	padding: 1rem;
+	border-radius: 8px;
+	overflow-x: auto;
+	color: var(--bio-fg);
+	font-family: 'DejaVu Mono', monospace;
+	font-size: 0.85rem;
+}
+
+.docs-body pre code {
+	padding: 0;
+	background: none;
+	color: inherit;
+}
+
+.docs-body table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.85rem;
+}
+
+.docs-body th,
+.docs-body td {
+	text-align: left;
+	padding: 0.5rem;
+	border: 1px solid var(--border);
+	vertical-align: top;
+}
+
+.docs-body th {
+	background-color: var(--card-bg);
+}
+
+.docs-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.docs-list li {
+	padding: 0.75rem 1rem;
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	background-color: var(--card-bg);
+}
+
+.docs-list a {
+	font-size: 0.95rem;
+	font-weight: 600;
+}
+
+.docs-list p {
+	margin: 0.35rem 0 0;
+	color: var(--muted);
+	font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+	.seen-full {
+		display: none;
+	}
+
+	.seen-short {
+		display: inline;
+	}
+
+	.bio-text pre {
+		display: block;
+}

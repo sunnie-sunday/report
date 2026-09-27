@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+<body>
+	<header class="site-header">
+		<div class="site-header-top">
+			<h1><a href="{{ "/" | relURL }}">{{ site.Title }}</a></h1>
+		</div>
+		<div class="site-description">
+			<h2>{{ .Title }}</h2>
+			{{ .Content }}
+		</div>
+	</header>
+
+	<main class="docs-body">
+		<ul class="docs-list">
+			{{ range .Pages.ByWeight }}
+			<li>
+				<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+				{{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+			</li>
+			{{ end }}
+		</ul>
+	</main>
+
+{{ partial "footer.html" . }}
+</body>
+</html>

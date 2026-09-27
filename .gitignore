@@ -1,5 +1,7 @@
+pelican-legacy/
+sphinx-legacy/
+
 output/
-docs/_build/
-__pycache__/
-*.pyc
-.DS_Store
+.hugo_build.lock
+
+*.sh

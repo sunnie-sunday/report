@@ -1,0 +1,28 @@
+/* Sonokai, default style (sainnhe/sonokai) */
+:root {
+	--bg: #2c2e34;
+	--fg: #e2e2e3;
+	--muted: #7f8490;
+	--border: #3b3e48;
+	--accent: #9ed072;
+	--red: #fc5d7c;
+	--yellow: #e7c664;
+	--green: #9ed072;
+	--cyan: #f39660;
+	--blue: #76cce0;
+	--purple: #b39df3;
+	--card-bg: #33353f;
+	--card-bg-hover: #363944;
+
+	/* GitHub's light source-code theme */
+	--bio-bg: #ffffff;
+	--bio-fg: #1f2328;
+	--bio-muted: #656d76;
+	--bio-border: #d0d7de;
+
+	/* Documentation */
+	--title-fg: #f39660;
+	--link: #76cce0;
+	--code-bg: #3b3e48;
+	--code-fg: #e2e2e3;
+}

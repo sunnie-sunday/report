@@ -20,17 +20,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - uses: peaceiris/actions-hugo@v3
         with:
-          python-version: '3.12'
-
-      - run: pip install -r requirements.txt
+          hugo-version: '0.165.0'
+          extended: true
 
       - name: Build site
-        run: pelican content -s publishconf.py -o output
-
-      - name: Build documentation
-        run: sphinx-build -b html docs output/docs
+        run: hugo
 
       - name: Disable Jekyll processing
         run: touch output/.nojekyll

@@ -1,5 +1,0 @@
-pelican>=4.11
-sphinx==9.1.0
-sphinxcontrib-httpdomain==2.0.0
-sphinxcontrib-httpexample==2.0
-sphinxext-opengraph>=0.13.0
