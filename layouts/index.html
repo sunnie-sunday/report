@@ -28,13 +28,14 @@
 		<section class="character">
 			<div class="character-row">
 				<div class="character-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="{{ $bioID }}">
-					<img class="avatar" src="{{ $char.Params.avatar_url | default $avatarDefault }}" onerror="this.onerror=null;this.src='{{ $avatarDefault }}';" alt="" width="48" height="48">
+					<img class="avatar" src="{{ $char.Params.avatar_url | default $avatarDefault }}" onerror="this.onerror=null;this.src='{{ $avatarDefault }}';" alt="{{ $char.Params.name }}" width="48" height="48">
 					<span class="identity">
-						<span class="name">
-							{{ $char.Params.name }}{{ if $char.Params.expired }}
-							<span class="badge-expired" title="This character hasn't contributed to EchoVault for over 60 days.">
-								Expired</span>{{ end }}
-							</span>
+						<h3 class="name">
+							{{ $char.Params.name }}
+							{{ if $char.Params.expired }}
+							<span class="badge-expired" title="This character hasn't contributed to TOOL for over 60 days.">Expired</span>
+							{{ end }}
+						</h3>
 						<span class="world">{{ $char.Params.world }}</span>
 					</span>
 					<span class="toggle-indicator" aria-hidden="true"></span>

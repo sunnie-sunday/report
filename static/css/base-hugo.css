@@ -52,6 +52,11 @@
 	display: none;
 }
 
+.name {
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
 .badge-expired {
 	display: inline-block;
 	margin-left: 0.5em;
