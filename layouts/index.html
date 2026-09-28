@@ -110,6 +110,32 @@
 		{{ end }}
 	</main>
 
+ {{- $items := slice }}
+	{{- range $index, $char := $characters }}
+		{{- $n := add $index 1 }}
+		{{- $person := dict "@type" "Person" "name" (printf "%s@%s" $char.Params.name $char.Params.world) }}
+		{{- with $char.Params.utc }}
+			{{- $person = merge $person (dict "dateCreated" .) }}
+		{{- end }}
+		{{- with $char.Params.avatar_url }}
+			{{- $person = merge $person (dict "image" .) }}
+		{{- end }}
+		{{- with $char.Params.lodestone_id }}
+			{{- $person = merge $person (dict "sameAs" (printf "https://na.finalfantasyxiv.com/lodestone/character/%s/" .)) }}
+		{{- end }}
+		{{- with $char.Params.fc_name }}
+			{{- $org := dict "@type" "Organization" "name" . }}
+			{{- with $char.Params.fc_lodestone_id }}
+				{{- $org = merge $org (dict "sameAs" (printf "https://na.finalfantasyxiv.com/lodestone/freecompany/%s/" .)) }}
+			{{- end }}
+			{{- $person = merge $person (dict "memberOf" $org) }}
+		{{- end }}
+		{{- $items = $items | append (dict "@type" "ListItem" "position" $n "item" $person) }}
+	{{- end }}
+	{{- if gt (len $items) 0 }}
+	<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "ItemList" "name" site.Title "itemListElement" $items) | jsonify (dict "indent" "  ") | safeJS }}</script>
+	{{- end }}
+
 	<section class="reviews">
 		<h2>Reviews</h2>
 		<article class="review">
