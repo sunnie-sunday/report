@@ -1,0 +1,22 @@
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	{{- range .Pages }}
+	{{- if eq .Kind "404" }}{{ continue }}{{ end }}
+	{{- if eq .Section "characters" }}{{ continue }}{{ end }}
+	<url>
+		<loc>{{ .Permalink }}</loc>
+		{{- $lastmod := .Lastmod }}
+		{{- if .IsHome }}
+			{{- $characters := where (site.GetPage "characters").Pages "Params.world" "!=" nil }}
+			{{- range $characters }}
+				{{- if .Lastmod.After $lastmod }}
+					{{- $lastmod = .Lastmod }}
+				{{- end }}
+			{{- end }}
+		{{- end }}
+		{{- if not $lastmod.IsZero }}
+		<lastmod>{{ $lastmod.UTC.Format "2006-01-02T15:04:05.000Z" | safeHTML }}</lastmod>
+		{{- end }}
+	</url>
+	{{- end }}
+</urlset>

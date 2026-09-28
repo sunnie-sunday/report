@@ -2,7 +2,11 @@ baseURL = "/"
 title = "Sunnie Sunday Report"
 publishDir = "output"
 
-disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT", "404"]
+# Use commit time to update the sitemap
+enableGitInfo = true
+enableRobotsTXT = true
+
+disableKinds = ["taxonomy", "term", "RSS"]
 
 [markup.goldmark.extensions.typographer]
   disable = true
