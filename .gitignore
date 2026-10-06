@@ -5,3 +5,5 @@ output/
 .hugo_build.lock
 
 *.sh
+*.py
+__pycache__/
