@@ -8,8 +8,7 @@ aliases:
 
 How Echo talks to its server: transport, authentication, and every endpoint it calls.
 
-Transport and envelope
-----------------------
+## Transport and envelope
 
 - Base URL: `https://echovault.gg`
 - All requests use `System.Net.Http.HttpClient` over HTTPS.
@@ -21,8 +20,7 @@ Transport and envelope
 - Timestamps are ISO-8601 UTC using full 7-digit fractional seconds and an explicit
   numeric UTC offset, e.g. `2026-08-09T12:00:00.1234567+00:00`.
 
-Endpoint index
---------------
+## Endpoint index
 
 Method | Path | Auth | Purpose
 --- | --- | --- | ---
@@ -37,8 +35,7 @@ POST | `/v1/auth/verify/start` | signed | Begin the contributor verification.
 POST | `/v1/auth/verify/complete` | signed | Complete the contributor verification.
 POST | `/v1/appeals` | signed + session | Submit an appeal to EchoVault.
 
-Request signing (HMAC)
-----------------------
+## Request signing (HMAC)
 
 Every authenticated request is signed.
 

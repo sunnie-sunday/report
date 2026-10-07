@@ -1,6 +1,6 @@
 ---
 title: "What is Echo?"
-description: "The behavior of a plugin distributed under the names Echo and it’s server EchoVault."
+description: "The behavior of a plugin for FFXIV distributed under the names Echo and it’s server EchoVault."
 weight: 10
 aliases:
   - /docs/basics.html
@@ -12,11 +12,10 @@ through every player character it can see and uploads detailed information about
 them, building a public “census” of players without their knowledge or consent.
 
 Because the *About* and *FAQ* pages on **EchoVault**’s website are extremely
-dishonest on what is actually being collected, we are documenting it from
-analyzing it’s decompiled code (`v0.8.4`).
+dishonest on what is actually being collected, we are documenting associated
+risks from analyzing it’s decompiled code (`v0.8.4`).
 
-Who ends up in its database?
-----------------------------
+## Who ends up in its database?
 
 Not just the person who installed Echo.
 Echo logs anyone it can see or interact with, including people who:
@@ -30,8 +29,7 @@ Echo logs anyone it can see or interact with, including people who:
 You do not need to have Echo installed, know it exists, or have ever spoken to
 the person running it, to end up in its database.
 
-Captured information
---------------------
+## Captured information
 
 | Echo's plugin | Description                        |
 | ---           | ---                                |
@@ -53,8 +51,7 @@ Captured information
 | ✅            | The character's Grand Company.     |
 | ✅            | The character's status icon.       |
 
-Where does it all go?
----------------------
+## Where does it all go?
 
 Everything collected is sent to a third-party website (`echovault.gg`) that has
 no affiliation with Square Enix. That site builds a public profile page for

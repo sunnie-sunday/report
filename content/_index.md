@@ -2,7 +2,7 @@
 title: "Characters verified as EchoVault users"
 ---
 
-To be verified, the owner of that character has to install the Echo plugin
+To be verified, the owner of that FFXIV character has to install the Echo plugin
 (successor of PlayerScope and Memoria) then add it's registration code on their
 Lodestone profile. This process isn't the same as a claim/takedown request, and
 is only required for stalkers that **contribute sightings** to EchoVault.
