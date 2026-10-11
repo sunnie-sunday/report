@@ -90,6 +90,10 @@
 	color: var(--title-fg, var(--accent));
 }
 
+.docs-body h3 {
+	color: var(--accent);
+}
+
 .docs-body p,
 .docs-body table {
 	margin: 1rem 0 0;
