@@ -1,7 +1,7 @@
 ---
 title: "Daily Routines"
 description: "Code analysis of Daily Routines, a new plugin with a stalking behavior similar to EchoVault."
-weight: 30
+weight: 31
 ---
 
 Code analysis of **Daily Routines**, a plugin with a stalking behavior similar to **EchoVault**.
@@ -133,15 +133,15 @@ The same README promises "无任何数据上报逻辑" (no data reporting of any
 With the ban out of the way for **Soil** users, **Daily Routines** collects more:
 
 - **2025-04-30**: a "Check previous names" button queries the author's server for a player's rename history ([`56a61fe`](https://github.com/Dalamud-DailyRoutines/DailyRoutines.ModulesPublic/commit/56a61fe8b6ef9ec36c134e09d151180e128ff091)), so that history was already being recorded.
-- **2026-04-02**: version `2.0.2.5`, the oldest binary checked here, already uploads sightings of nearby players (to `103.236.67.155`).
-- **2026-08-18**: the account credential appears, described as one that "binds to the currently logged-in game account" ([`803ddb1`](https://github.com/Dalamud-DailyRoutines/DailyRoutines.Localizations/commit/803ddb1a8fbc9d59d5d9e6423000e4ff02856edb)). This is the Account ID credential described above.
+- **2026-04-02**: version `2.0.2.5`, the oldest binary checked here, already uploads sightings of nearby players (to `103.236.67.155`) and sends a credential built from your Account ID.
+- **2026-08-18**: the plugin's text for that credential is corrected from "binds to a single device" to "binds to the currently logged-in game account" ([`803ddb1`](https://github.com/Dalamud-DailyRoutines/DailyRoutines.Localizations/commit/803ddb1a8fbc9d59d5d9e6423000e4ff02856edb)).
 
 The same author fakes device IDs to protect accounts in **Soil**, and sends real hardware and Account IDs to their own server in **Daily Routines**.
 
 ## How the data is sent
 
 Requests to the plugin's own API servers also carry the header `X-Plugin: daily-routines`.
-The sightings ingest, the player lookups and the credential checks are all **plain HTTP to bare IP addresses**, so your Character ID, your credential hashes and other players' sightings cross the network unencrypted. Only the NekoAuth licence server and the `PassAuthInfo.txt` file use HTTPS.
+The sightings ingest, the player lookups and the credential checks are all **plain HTTP to bare IP addresses**, so your Character ID, your credential hashes and other players' sightings cross the network unencrypted.
 
 ### Sightings ingest
 
