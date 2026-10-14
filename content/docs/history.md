@@ -64,10 +64,10 @@ Goes to: local only (plugin configuration).\
 Commit [`09bb95a`](https://github.com/SheepGoMeh/VisibilityPlugin/commit/09bb95a00cb2558749258e3d4d8617439ea05132) on GitHub; official repository (builds from 2024-09-30 to 2024-11-16)
 
 **2024-10-10 · Sonar** · own ID\
-Sends a reversable hash of the user's `Character.AccountId` at login.\
+Sent a reversible hash of the user's `Character.AccountId` at login.\
 Severity: HIGH\
 Goes to: Sonar server, with a hardware fingerprint.\
-Commit [`30ad4cc`](https://github.com/FFXIV-Sonar/SonarDistrib/commit/30ad4ccc5aa80986699e4e43e1d9ebf32a08f154) on GitHub; released in 0.6.6.2
+Commit [`30ad4cc`](https://github.com/FFXIV-Sonar/SonarDistrib/commit/30ad4ccc5aa80986699e4e43e1d9ebf32a08f154) on GitHub; released in 0.6.6.2 (builds from 2024-10-10 to 2026-10-14)
 
 **2024-10-14 · CN Dalamud (OtterCorp)** · own ID\
 Login telemetry adds `SHA256(AccountId)`; the public IP is now sent unhashed.\
@@ -238,6 +238,10 @@ First mention on the [/vg/ archive](https://arch.b4k.dev/vg/thread/573322719/#57
 **2026-07-13 · Dalamud**\
 Update: Square Enix's fix "is not enough to prevent malicious users".\
 [dalamud.dev](https://dalamud.dev/news/2026/07/13/an-update-on-account-ids)
+
+**2026-10-14 · Sonar**\
+Stops sending the Account ID (`Hash2` is now always 0); the Content ID hash and hardware fingerprint are still sent.\
+Commit [`e883116`](https://github.com/FFXIV-Sonar/SonarDistrib/commit/e883116d6235101f7b77bf3dd75c76ec6e8f8d48) and [issue #19](https://web.archive.org/web/20261014035452/https://github.com/FFXIV-Sonar/SonarDistrib/issues/19) on GitHub; released in 15.757.0.0
 
 ## Plugins scoping nearby players
 
