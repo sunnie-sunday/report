@@ -11,7 +11,8 @@ bios. This can lead to some confusion so here's a little breakdown of them:
 
 ## Claim codes
 
-* Format: `echo-claim-deadbeef`
+* Old format: `echo-claim-deadbeef`
+* New format: `AZBYCXDW10`
 
 This code is for the "Claim your character" feature of EchoVault.
 We do not recommend to use this as it sends data to EchoVault's developper.
@@ -21,7 +22,8 @@ over their own characters on the site.
 
 ## Takedown codes
 
-* Format: `echo-takedown-deadbeef`
+* Old format: `echo-takedown-deadbeef`
+* New format: `AZBYCXDW10`
 
 This code is for the "Character removal" form of EchoVault.
 We do not recommend to use this as it sends data to EchoVault's developper.
@@ -33,11 +35,15 @@ but most of them just wants to be removed for privacy reasons.
 ## User verification codes
 
 * Old format: `ECHO-DEADBEEF`
-* New format: `DEADBEEF11`
+* New format: `AZBYCXDW10`
 
 There's only one use for this code: becoming a verified user to contribute
 sightings on **EchoVault**. This is the process that the leaked characters on
 the [**Sunnie Sunday Report**](/) have completed.
+
+The old format was uniquely identifiable but the new format is now shared with
+claim/takedown codes so new stalkers can't be identified with this alone. But
+the real method of auditing Echo's API does still work to find them.
 
 ## Example
 
