@@ -215,10 +215,6 @@ Severity: HIGH\
 Goes to: Memoria server and public website.\
 [wtf.memoria.gg](https://wtf.memoria.gg/historical.html)
 
-**2026-06-26 · PFRadar (decorwdyun)**\
-No Account ID use; its UI notes the blacklist highlight "stopped working after 7.3".\
-Decompiled 1.5.0.7
-
 **2026-06-29 · Memoria** · others' IDs\
 v1.3.0: account linking from server messages instead of in-memory values.\
 Severity: HIGH\
