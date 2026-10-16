@@ -219,7 +219,7 @@ Goes to: Memoria server and public website.\
 Shut down; alt display removed (critics claim back-end collection continued).\
 [finalboss.io](https://finalboss.io/how-a-stalking-scandal-just-killed-ffxivs-memoria)
 
-**2026-07-08 · EchoVault** · others' IDs\
+**2026-07-05 · EchoVault** · others' IDs\
 Uploads `Character.AccountId` of nearby players and social lists with every sighting.\
 Severity: HIGH\
 Goes to: EchoVault server and public website.\
@@ -296,7 +296,7 @@ Collects: `{Content ID, name, home world, source}` of nearby players and charact
 Goes to: raw TCP to `49.235.185.254:53188` and `milalla.xuolu.com:56188`.\
 Decompiled 1.5.0.7
 
-**2026-07-08 · EchoVault**\
+**2026-07-05 · EchoVault**\
 Successor of Memoria.\
 Severity: HIGH\
 Collects: Content ID, Account ID, name, worlds, position, job, level, FC tag, appearance, equipment, title, mount, online status...\
