@@ -19,7 +19,7 @@ Severity:
 
 This list aims to be wide and transparent and may contain plugins that remain
 ethical and secure despite their use of those IDs. The *what* and the *where*
-matters here and the severity rating is there to help understand that.
+matters here and a severity rating is there to help understand that.
 
 ## Account IDs
 
@@ -45,17 +45,11 @@ Severity: LOW\
 Goes to: local only (debug windows and log).\
 Commits [`810f4f5`](https://github.com/awgil/ffxiv_bossmod/commit/810f4f55ec30ec531db3c373896358bfcecb22c6) and [`e7931b7`](https://github.com/awgil/ffxiv_bossmod/commit/e7931b7dd3c80522a7bb8cee822b343d4bb24266) on GitHub
 
-**2024-07-17 · Mare Synchronos** · own + others' IDs\
-Player identity becomes `SHA256(AccountId)`: sent to the server, relayed to paired users, matched against every nearby player.\
+**2024-07-19 · Mare Synchronos** · own + others' IDs\
+Player identity becomes `SHA256(AccountId)`: sent to the server, relayed to paired users, matched against nearby players. Bans move from "character" to "XIV service account".\
 Severity: HIGH\
 Goes to: Mare server, relayed to paired users (nearby players' hashes are matched locally).\
-Commit [`bfafcad`](https://github.com/universalconquistador/MareSynchronosClient/commit/bfafcad8e8b84f0c82094aac63e5fc8a9e77c6b9) on GitHub
-
-**2024-07-18 · Mare Synchronos** · own ID\
-Server bans move from "character" to "XIV service account".\
-Severity: HIGH\
-Goes to: Mare server (bans keyed by account).\
-Commit [`713d054`](https://github.com/ottercorp/Mare-server/commit/713d054ccb965f7adb8eafa6e3fb52853a1e6dd2) on GitHub
+Commits [`bfafcad`](https://github.com/universalconquistador/MareSynchronosClient/commit/bfafcad8e8b84f0c82094aac63e5fc8a9e77c6b9) (client) and [`713d054`](https://web.archive.org/web/20240918150811/https://github.com/Penumbra-Sync/server/commit/713d054ccb965f7adb8eafa6e3fb52853a1e6dd2) (server) on GitHub
 
 **2024-09-30 · Visibility** · others' IDs\
 The VoidList (hidden players) is keyed by each hidden player's Account ID and saved in the plugin configuration.\
@@ -128,11 +122,11 @@ Stops saving Account IDs (and Content IDs).\
 Commit [`72a8123`](https://github.com/wrath16/PvpStats/commit/72a8123871ca750bb96aa6bab4e9fd4e2d224d45) on GitHub
 
 **2025-03-25 · Square Enix**\
-Patch 7.2 masks other players' Account IDs ("help prevent the identification of account IDs").\
+Masks other players' Account IDs ("help prevent the identification of account IDs").\
 [Patch 7.2 notes](https://na.finalfantasyxiv.com/lodestone/topics/detail/3c4910f373e497acd3428c37f6358e341e4cc06d/)
 
 **2025-03-27 · Mare Synchronos** · own + others' IDs\
-Reads the own ID via static signature `48 8B 0D ?? ?? ?? ?? 4C 8B CA`; an XOR formula undoes the 7.2 masking for other players.\
+Reads the users' own ID via static signature `48 8B 0D ?? ?? ?? ?? 4C 8B CA`; an XOR formula undoes the 7.2 masking for other players.\
 Severity: HIGH\
 Goes to: Mare server (own hash); other players' unmasked hashes are matched locally.\
 Commit [`ed604d9`](https://github.com/universalconquistador/MareSynchronosClient/commit/ed604d9bd65f6cff1dad496e11c53127fd216909) on GitHub
