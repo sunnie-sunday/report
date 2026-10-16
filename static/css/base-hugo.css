@@ -189,6 +189,22 @@
 	font-size: 0.85rem;
 }
 
+.severity {
+	font-weight: 600;
+}
+
+.severity-LOW {
+	color: var(--green);
+}
+
+.severity-MEDIUM {
+	color: var(--yellow);
+}
+
+.severity-HIGH {
+	color: var(--red);
+}
+
 @media (max-width: 640px) {
 	.seen-full {
 		display: none;

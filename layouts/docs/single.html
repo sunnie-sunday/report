@@ -13,7 +13,7 @@
 
 	<main class="docs-body">
 		<h1>{{ .Title }}</h1>
-		{{ .Content }}
+		{{ .Content | replaceRE `Severity: (LOW|MEDIUM|HIGH)` `Severity: <span class="severity severity-$1">$1</span>` | safeHTML }}
 	</main>
 
 {{ partial "footer.html" . }}
