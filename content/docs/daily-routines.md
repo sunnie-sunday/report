@@ -1,6 +1,6 @@
 ---
 title: "Daily Routines"
-description: "Code analysis of Daily Routines, a new plugin with a stalking behavior similar to EchoVault."
+description: "Code analysis of Daily Routines, a plugin with a stalking behavior similar to EchoVault."
 weight: 31
 ---
 

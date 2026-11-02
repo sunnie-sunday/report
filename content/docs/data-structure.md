@@ -6,12 +6,11 @@ aliases:
   - /docs/data_model.html
 ---
 
-The C# data structure of Echo's plugin. Every type below is declared in it's
-decompiled code (`v8.0.4`).
+The C# data structure of Echo's plugin. Every type below is declared in its
+decompiled code (`v0.10.0`).
 
 ## Registration and session
 
-C#
 ```csharp
 public record RegisterRequest(
    int ProtocolVersion,
@@ -39,7 +38,6 @@ The three types that make up the `/v1/ingest` request body: `EquipSlot`,
 `ReporterSelf`, and `Sighting` itself, plus the envelope `IngestBatch` that
 wraps them.
 
-C#
 ```csharp
 public record ReporterSelf(
    ushort TerritoryId,
@@ -79,7 +77,66 @@ public record Sighting(
    ushort MountId = 0,
    ushort OnlineStatusId = 0,
    ushort DutyId = 0,
-   bool? IsOnline = null);
+   bool? IsOnline = null,
+   ushort MinionId = 0,
+   ushort FacewearId = 0,
+   ushort FashionAccessoryId = 0,
+   byte? Gender = null,
+   ulong? StatusFlags = null,
+   ExamineData? Examine = null,
+   PlateData? Plate = null);
+
+public record MateriaPiece(
+   ushort MateriaId,
+   byte Grade);
+
+public record ExamineSlot(
+   byte Slot,
+   uint ItemId,
+   bool Hq,
+   uint GlamourItemId,
+   byte Stain0,
+   byte Stain1,
+   List<MateriaPiece>? Materia = null,
+   ulong CrafterContentId = 0uL);
+
+public record ExamineData(
+   List<ExamineSlot> Slots,
+   List<uint>? Barding = null,
+   ulong FcId = 0uL,
+   string? FcName = null,
+   ushort FcMemberCount = 0,
+   byte FcGrandCompany = 0,
+   string? SearchComment = null,
+   ulong FcCrest = 0uL);
+
+public record PlateActivity(
+   uint IconId,
+   string Name);
+
+public record PlateDesign(
+   ushort BannerBg,
+   ushort BannerFrame,
+   ushort BannerDecoration,
+   ushort BasePlate,
+   byte TopBorder,
+   byte BottomBorder,
+   List<uint>? DecorationIcons = null,
+   bool InvertPortrait = false);
+
+public record PlateData(
+   string OpenedFrom,
+   byte PreferredClassJobId = 0,
+   byte GcRank = 0,
+   List<byte>? PlayStyles = null,
+   uint ActiveHoursWeekdays = 0u,
+   uint ActiveHoursWeekends = 0u,
+   List<PlateActivity>? Activities = null,
+   string? FreeCompanyName = null,
+   string? SearchComment = null,
+   PlateDesign? Design = null,
+   string? PortraitBase64 = null,
+   ulong FcCrest = 0uL);
 
 public record IngestBatch(
    int ProtocolVersion,
@@ -96,21 +153,21 @@ This is the core payload type, and populated by each collectors described below.
 
 | Field | Type | Notes |
 | --- | --- | --- |
-| `contentId`` | ulong (string) | Permanent per-character identifier. |
-| `name`` | string | Full character name at time of capture. |
+| `contentId` | ulong (string) | Permanent per-character identifier. |
+| `name` | string | Full character name at time of capture. |
 | `homeWorldId` / `homeWorldName` | uint / string | Character's home world. |
 | `currentWorldId` | uint | World the character is currently playing on. |
 | `territoryId` | ushort | Current zone/instance ID. |
 | `x` / `y` / `z` | float | Exact in-game position at time of capture. |
 | `jobId` / `level` | byte | Current class/job and level. |
 | `fcTag` | string (optional) | Free Company tag, if any. |
-| `customizeBase64` | string | Base64 of the game's raw "Customize" byte block. | friends, FC, linkshells, last Player Search result.
+| `customizeBase64` | string | Base64 of the game's raw "Customize" byte block. |
 | `seenAtUtc` | timestamp | When this sighting occurred. |
-| `source` | string | One of `sweep`, `spawn`, `social`, `namecache`, `search` |
+| `source` | string | One of `sweep`, `spawn`, `social`, `namecache`, `search`, `examine`, `plate` |
 | `accountId` | ulong (string) | **SE account identifier**, shared across every character on the same account. |
 | `titleId` | ushort | Currently equipped title. |
 | `grandCompany` | byte | Grand Company + rank byte (`Battalion`). |
-| `equipment` | list of `EquipSlot` |
+| `equipment` | list of `EquipSlot` | Visible gear per slot (id, variant, two stains). |
 | `mainhandModel` / `offhandModel` | ulong | Weapon model IDs for both weapon slots. |
 | `reporter` | `ReporterSelf` | The *uploading* player's own zone + exact coordinates. |
 | `mountId` | ushort | Currently summoned mount, if any. |
@@ -120,7 +177,7 @@ This is the core payload type, and populated by each collectors described below.
 
 ## Collection channels
 
-Echo runs four independent collectors:
+Echo runs five independent collectors:
 
 | Collector | Cadence | Mechanism |
 | --- | --- | --- |
@@ -128,10 +185,10 @@ Echo runs four independent collectors:
 | `SocialCollector` | Party: 15s, Rosters: 60s, Search: 15s | Reads party, friends, FC, linkshells, last Player Search result. |
 | `NameCacheCollector` | Event-driven | Captures every Party Finder listing received and right-click context menus. |
 | `SearchSweeper` / `PlayerSearchRequest` | Randomized (opt-in) | Automates the game's own Player Search feature (DMA). |
+| `InspectCollector` | Event-driven | Reads the "examine" and "adventurer plate" windows when opened. |
 
 ## Server config
 
-C#
 ```csharp
 public record ConfigResponse(
    string MinPluginVersion,
@@ -143,7 +200,6 @@ public record ConfigResponse(
 
 ## Coverage / scan targets
 
-C#
 ```csharp
 public record ScanTargetsRequest(
    int ProtocolVersion,
@@ -179,7 +235,6 @@ The client waits out a full 15 minutes regardless of whether the previous attemp
 succeeded. If the very first fetch fails, the Progress tab keeps showing *"No stats
 yet - they appear once uploads flow."* until the next attempt, 15 minutes later.
 
-C#
 ```csharp
 public record ScannerStatsRequest(
    int ProtocolVersion);
@@ -202,7 +257,6 @@ public record ScannerStatsResponse(
 
 ## Claims and verification
 
-C#
 ```csharp
 public record LinkStartRequest(
    int ProtocolVersion,
@@ -241,7 +295,6 @@ public record VerifyCompleteResponse(
 
 ## Appeals and generic errors
 
-C#
 ```csharp
 public record AppealRequest(
    string? Note);
@@ -274,7 +327,6 @@ is sent over the network, which is plain JSON over TLS.
 These two types never appear on the wire at all.
 They exist purely to persist local state to disk between sessions.
 
-C#
 ```csharp
 public record StoredCredentials(
    string UploaderId,
@@ -293,5 +345,6 @@ public sealed record PersistedSettings(
    bool AutoSearchEnabled = false,
    bool OverlayEnabled = false,
    bool OverlayClickThrough = false,
-   bool OverlayLocked = false);
+   bool OverlayLocked = false,
+   bool InspectCaptureEnabled = true);
 ```
