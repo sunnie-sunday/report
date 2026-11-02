@@ -83,15 +83,24 @@
 	color: var(--title-fg, var(--accent));
 }
 
-.docs-body h2,
-.docs-body h3 {
-	margin: 1.5rem 0 0.5rem;
-	font-size: 1.1rem;
+.docs-body h2 {
+	margin: 2rem 0 0.5rem;
+	font-size: 1.25rem;
 	color: var(--title-fg, var(--accent));
 }
 
+.docs-body h2 code {
+	font-size: 0.9rem;
+}
+
 .docs-body h3 {
+	margin: 1.5rem 0 0.5rem;
+	font-size: 1rem;
 	color: var(--accent);
+}
+
+.docs-body h3 code {
+	font-size: 0.9rem;
 }
 
 .docs-body p,
@@ -142,6 +151,7 @@
 	padding: 0;
 	background: none;
 	color: inherit;
+	font-size: 12px;
 }
 
 .docs-body table {
