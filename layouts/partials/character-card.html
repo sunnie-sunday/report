@@ -36,7 +36,7 @@
 				<tr><th>Seen</th><td><span class="seen-full">{{ . }}</span><span class="seen-short">{{ $short }}</span></td></tr>
 				{{ end }}
 				{{ with $char.Params.transfers }}
-				<tr><th>Transfers</th><td>{{ . }}</td></tr>
+				<tr><th>Transfers</th><td>{{ delimit (sort (slice | append .)) ", " }}</td></tr>
 				{{ end }}
 				{{ with $char.Params.utc }}
 				<tr><th>Added</th><td><time class="local-time" datetime="{{ . }}">{{ . }}</time></td></tr>
@@ -58,7 +58,7 @@
 				<tr><th>FC Lodestone</th><td><a href="https://na.finalfantasyxiv.com/lodestone/freecompany/{{ . }}/" target="_blank" rel="noopener noreferrer"><span class="url-full">https://na.finalfantasyxiv.com/lodestone/freecompany/{{ . }}/</span><span class="url-id">{{ . }}</span></a></td></tr>
 				{{ end }}
 				{{ with $char.Params.aka }}
-				<tr><th>Also known as</th><td>{{ . }}</td></tr>
+				<tr><th>Also known as</th><td>{{ delimit (sort (slice | append .)) ", " }}</td></tr>
 				{{ end }}
 			</table>
 		</footer>
