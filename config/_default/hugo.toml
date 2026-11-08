@@ -1,5 +1,5 @@
 baseURL = "/"
-title = "Sunnie Sunday Report"
+title = "Echo-Unvaulted"
 publishDir = "output"
 
 # Use commit time to update the sitemap
