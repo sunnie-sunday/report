@@ -225,6 +225,15 @@
 	font-size: 0.85rem;
 }
 
+.post-body h4:first-child {
+	margin-top: 0px;
+}
+
+.post-body h4 {
+	margin: 10px 0 10x;
+	color: var(--red);
+	font-size: 1rem;
+}
 
 .docs-body {
 	flex: 1 0 auto;
