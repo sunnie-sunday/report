@@ -6,7 +6,7 @@
 <section class="character"{{ with $char.Params.lodestone_id }} data-lodestone-id="{{ . }}"{{ end }}>
 	<div class="character-row">
 		<div class="character-header">
-			<img class="avatar" src="https://img2.finalfantasyxiv.com/f/{{ $char.Params.avatar | default $avatarDefault }}_{{ md5 $char.Params.world }}fc0.jpg" onerror="this.onerror=null;this.src='{{ $avatarDefault }}';" alt="{{ $char.Params.name }}" width="48" height="48">
+			<img class="avatar" src="https://img2.finalfantasyxiv.com/f/{{ $char.Params.avatar | default $avatarDefault }}_{{ md5 $char.Params.world }}fc0.jpg" onerror="this.onerror=null;this.src='{{ $avatarDefault }}';" alt="{{ $char.Params.name }}" width="48" height="48" loading="lazy" decoding="async">
 			<span class="identity">
 				<h3 class="name">{{ $char.Params.name }}</h3>
 				<span class="world">{{ $char.Params.world }}</span>
