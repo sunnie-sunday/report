@@ -1,0 +1,13 @@
+{{- /* {{< character "<lodestone_id>" >}} embeds that character's full card */ -}}
+{{- $id := string (.Get 0) }}
+{{- $char := false }}
+{{- range (site.GetPage "/characters").Pages }}
+	{{- if eq (string .Params.lodestone_id) $id }}
+		{{- $char = . }}
+		{{- break }}
+	{{- end }}
+{{- end }}
+{{- if not $char }}
+	{{- errorf "%s: %q not found in content/characters/" .Position $id }}
+{{- end }}
+{{ partial "character-card.html" (dict "char" $char "mode" "full") }}

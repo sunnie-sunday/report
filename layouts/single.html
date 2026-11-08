@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+<body>
+	<header class="site-header">
+		<div class="site-header-top">
+			<h1><a href="{{ "/" | relURL }}">{{ site.Title }}</a></h1>
+			{{ partial "share-links.html" . }}
+		</div>
+		<div class="site-description">
+			<h2>{{ .Title }}</h2>
+			{{- /* .Lastmod is the article file's last git commit (see hugo.toml's
+						 [frontmatter]); only worth showing when that's a later day than
+						 publication, not a same-day fix. */}}
+			<p class="post-date">
+				<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+				{{- if gt (.Lastmod.UTC.Format "2006-01-02") (.Date.UTC.Format "2006-01-02") }}
+				&middot; Updated <time datetime="{{ .Lastmod.UTC.Format "2006-01-02" }}">{{ .Lastmod.UTC | time.Format ":date_long" }}</time>
+				{{- end }}
+			</p>
+		</div>
+	</header>
+
+	<main class="post">
+		<article class="post-body">{{ .Content }}</article>
+	</main>
+
+	{{ partial "footer.html" . }}
+
+	<script src="{{ "js/local-time.js" | relURL }}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="{{ "js/request.js" | relURL }}"></script>
+	<script src="{{ "js/validator.js" | relURL }}"></script>
+</body>
+</html>

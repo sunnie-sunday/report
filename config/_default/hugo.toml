@@ -31,6 +31,16 @@ disableKinds = ["taxonomy", "term", "RSS"]
     kind = "page"
     path = "/characters/**"
 
+[[cascade]]
+  [cascade.build]
+    render = "never"
+  [cascade.target]
+    kind = "section"
+    path = "/posts"
+
+[frontmatter]
+  lastmod = [":git", "date"]
+
 [params]
   author = "/xivg/"
   # One of the files in static/css/themes/, without the .css extension

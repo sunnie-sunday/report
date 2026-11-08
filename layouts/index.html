@@ -5,12 +5,7 @@
 	<header class="site-header">
 		<div class="site-header-top">
 			<h1>{{ site.Title }}</h1>
-			<div class="share-links">
-				<span class="share-label">Share:</span>
-				<a class="share-link" href="https://twitter.com/intent/tweet?url={{ .Permalink | urlquery }}" target="_blank" rel="noopener noreferrer">X</a>
-				<span class="share-separator">&middot;</span>
-				<a class="share-link" href="https://bsky.app/intent/compose?text={{ .Permalink | urlquery }}" target="_blank" rel="noopener noreferrer">Bluesky</a>
-			</div>
+			{{ partial "share-links.html" . }}
 		</div>
 		<div class="site-description">
 			<h2>{{ .Title }}</h2>
@@ -18,117 +13,76 @@
 		</div>
 	</header>
 
-	<main class="roster">
-		{{ $avatarDefault := "images/avatar-default.png" | relURL }}
-		{{ $characters := where (site.GetPage "characters").Pages "Params.world" "!=" nil }}
-		{{ $characters = sort $characters "Params.utc" "desc" }}
-		{{ range $index, $char := $characters }}
-		{{ $n := add $index 1 }}
-		{{ $bioID := printf "bio-%d" $n }}
-		<section class="character">
-			<div class="character-row">
-				<div class="character-header">
-					<img class="avatar" src="{{ $char.Params.avatar_url | default $avatarDefault }}" onerror="this.onerror=null;this.src='{{ $avatarDefault }}';" alt="{{ $char.Params.name }}" width="48" height="48">
-					<span class="identity">
-						<h3 class="name">{{ $char.Params.name }}</h3>
-						<span class="world">{{ $char.Params.world }}</span>
-					</span>
-					<span class="badges">
-						{{- range sort (slice | append $char.Params.source) }}
-						{{- $color := index site.Params.sourceColors (lower .) }}
-						<span class="badge badge-{{ $color | default "muted" }}">{{ . }}</span>
-						{{ end }}
-					</span>
-				</div>
-			</div>
-			<div class="bio">
-				{{ with $char.Content }}
-				<div class="bio-content">
-					<div class="bio-text">{{ . }}</div>
-				</div>
+	{{- /* Character summaries sourced from their markdown frontmatter. */}}
+	{{- $characters := where (site.GetPage "/characters").Pages "Params.world" "!=" nil }}
+	{{- $byID := dict }}
+	{{- $people := dict }}
+	{{- range $char := $characters }}
+		{{- with $char.Params.lodestone_id }}
+			{{- $id := string . }}
+			{{- $byID = merge $byID (dict $id $char) }}
+			{{- $person := dict "@type" "Person" "name" (printf "%s@%s" $char.Params.name $char.Params.world) "sameAs" (printf "https://na.finalfantasyxiv.com/lodestone/character/%s/" $id) }}
+			{{- with $char.Params.utc }}
+				{{- $person = merge $person (dict "dateCreated" .) }}
+			{{- end }}
+			{{- with $char.Params.avatar_url }}
+				{{- $person = merge $person (dict "image" .) }}
+			{{- end }}
+			{{- with $char.Params.fc_name }}
+				{{- $org := dict "@type" "Organization" "name" . }}
+				{{- with $char.Params.fc_lodestone_id }}
+					{{- $org = merge $org (dict "sameAs" (printf "https://na.finalfantasyxiv.com/lodestone/freecompany/%s/" .)) }}
+				{{- end }}
+				{{- $person = merge $person (dict "memberOf" $org) }}
+			{{- end }}
+		{{- $people = merge $people (dict $id $person) }}
+		{{- end }}
+	{{- end }}
+	{{- $embedded := dict }}
+	{{- $items := slice }}
+	<main class="posts">
+		{{ range $index, $post := (site.GetPage "/posts").Pages.ByDate.Reverse }}
+		{{ $ids := slice }}
+		{{ range findRESubmatch `data-lodestone-id="(\d+)"` $post.Content }}
+			{{ $ids = $ids | append (index . 1) }}
+		{{ end }}
+		{{ $ids = uniq $ids }}
+		<article class="post-summary">
+			<h2 class="post-title"><a href="{{ $post.RelPermalink }}">{{ $post.Title }}</a></h2>
+			<time class="post-date" datetime="{{ $post.Date.Format "2006-01-02" }}">{{ $post.Date | time.Format ":date_long" }}</time>
+			{{ with $post.Params.summary }}
+			<div class="post-summary-text">{{ $post.Summary }}</div>
+			{{ end }}
+			{{ $about := slice }}
+			{{ with $ids }}
+			<div class="post-characters">
+				{{ range . }}
+				{{ with index $byID . }}
+				{{ partial "character-card.html" (dict "char" . "mode" "compact") }}
 				{{ end }}
-				<footer class="bio-footer">
-					<table>
-						{{ with $char.Params.seen }}
-						{{ $parts := split . "-" }}
-						{{ $short := strings.TrimSpace (index $parts (sub (len $parts) 1)) }}
-						<tr>
-							<th>Location seen</th>
-							<td><span class="seen-full">{{ . }}</span><span class="seen-short">{{ $short }}</span></td>
-						</tr>
-						{{ end }}
-						{{ with $char.Params.utc }}
-						<tr><th>Time seen</th><td><time datetime="{{ . }}">{{ . }}</time></td></tr>
-						{{ end }}
-						<tr class="spacer"><td colspan="2"></td></tr>
-						{{ with $char.Title }}
-						<tr><th>Title</th><td>{{ . }}</td></tr>
-						{{ end }}
-						{{ with $char.Params.job }}
-						<tr><th>Job</th><td>{{ . }}{{ with $char.Params.level }} Lv. {{ . }}{{ end }}</td></tr>
-						{{ end }}
-						{{ with $char.Params.lodestone_id }}
-						<tr>
-							<th>Lodestone</th>
-							<td>
-								<a href="https://na.finalfantasyxiv.com/lodestone/character/{{ . }}/" target="_blank" rel="noopener noreferrer">
-									<span class="url-full">https://na.finalfantasyxiv.com/lodestone/character/{{ . }}/</span><span class="url-id">{{ . }}</span>
-								</a>
-							</td>
-						</tr>
-						{{ end }}
-						{{ with $char.Params.fc_name }}
-						<tr class="spacer"><td colspan="2"></td></tr>
-						<tr><th>FC Name</th><td>{{ . }}</td></tr>
-						{{ end }}
-						{{ with $char.Params.fc_lodestone_id }}
-						<tr>
-							<th>FC Lodestone</th>
-							<td>
-								<a href="https://na.finalfantasyxiv.com/lodestone/freecompany/{{ . }}/" target="_blank" rel="noopener noreferrer">
-									<span class="url-full">https://na.finalfantasyxiv.com/lodestone/freecompany/{{ . }}/</span><span class="url-id">{{ . }}</span>
-								</a>
-							</td>
-						</tr>
-						{{ end }}
-						<tr class="spacer"><td colspan="2"></td></tr>
-						{{ with $char.Params.aka }}
-						<tr><th>Also known as</th><td>{{ . }}</td></tr>
-						{{ end }}
-						{{ with $char.Params.transfers }}
-						<tr><th>Transfers</th><td>{{ . }}</td></tr>
-						{{ end }}
-					</table>
-				</footer>
+				{{ $embedded = merge $embedded (dict . true) }}
+				{{ with index $people . }}{{ $about = $about | append . }}{{ end }}
+				{{ end }}
 			</div>
-		</section>
+			{{ end }}
+			<a class="post-more" href="{{ $post.RelPermalink }}">Read the article</a>
+		</article>
+		{{- $posting := dict "@type" "BlogPosting" "headline" $post.Title "url" $post.Permalink "datePublished" ($post.Date.Format "2006-01-02T15:04:05Z07:00") }}
+		{{- with $about }}
+		{{- $posting = merge $posting (dict "about" .) }}
+		{{- end }}
+		{{- $items = $items | append (dict "@type" "ListItem" "position" (add $index 1) "item" $posting) }}
 		{{ else }}
-		<p class="empty">No characters yet.</p>
+		<p class="empty">No articles yet.</p>
 		{{ end }}
 	</main>
-
- {{- $items := slice }}
-	{{- range $index, $char := $characters }}
-		{{- $n := add $index 1 }}
-		{{- $person := dict "@type" "Person" "name" (printf "%s@%s" $char.Params.name $char.Params.world) }}
-		{{- with $char.Params.utc }}
-			{{- $person = merge $person (dict "dateCreated" .) }}
+	{{- /* Flag characters that no article embeds at build time. */}}
+	{{- range $characters }}
+		{{- if not (index $embedded (string .Params.lodestone_id)) }}
+			{{- warnf "%s (%s) isn't embedded in any article, so it won't appear on the site" .Params.name .File.Path }}
 		{{- end }}
-		{{- with $char.Params.avatar_url }}
-			{{- $person = merge $person (dict "image" .) }}
-		{{- end }}
-		{{- with $char.Params.lodestone_id }}
-			{{- $person = merge $person (dict "sameAs" (printf "https://na.finalfantasyxiv.com/lodestone/character/%s/" .)) }}
-		{{- end }}
-		{{- with $char.Params.fc_name }}
-			{{- $org := dict "@type" "Organization" "name" . }}
-			{{- with $char.Params.fc_lodestone_id }}
-				{{- $org = merge $org (dict "sameAs" (printf "https://na.finalfantasyxiv.com/lodestone/freecompany/%s/" .)) }}
-			{{- end }}
-			{{- $person = merge $person (dict "memberOf" $org) }}
-		{{- end }}
-		{{- $items = $items | append (dict "@type" "ListItem" "position" $n "item" $person) }}
 	{{- end }}
+
 	{{- if gt (len $items) 0 }}
 	<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "ItemList" "name" site.Title "itemListElement" $items) | jsonify (dict "indent" "  ") | safeJS }}</script>
 	{{- end }}
@@ -159,10 +113,8 @@
 		</article>
 	</section>
 
-{{ partial "footer.html" . }}
+	{{ partial "footer.html" . }}
 
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<script src="{{ "js/request.js" | relURL }}"></script>
-	<script src="{{ "js/validator.js" | relURL }}"></script>
+	<script src="{{ "js/local-time.js" | relURL }}"></script>
 </body>
 </html>

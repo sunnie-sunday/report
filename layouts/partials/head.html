@@ -1,4 +1,14 @@
 <head>
+	{{- $title := cond .IsHome site.Title .Title }}
+	{{- $description := .Title }}
+	{{- $isArticle := and .IsPage (eq .Section "report") }}
+	{{- if $isArticle }}
+		{{- with .Params.summary }}
+		{{- $description = $.Summary | plainify | htmlUnescape | strings.TrimSpace }}
+		{{- end }}
+	{{- else if not .IsHome }}
+		{{- $description = .Params.description | default .Title }}
+	{{- end }}
 	<meta charset="utf-8">
 	<link rel="canonical" href="{{ .Permalink }}">
 	<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} &middot; {{ site.Title }}{{ end }}</title>
@@ -8,7 +18,13 @@
 	<meta name="theme-color" content="#f39660">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Open Graph -->
+	{{- if $isArticle }}
+	<meta property="og:type" content="article">
+	<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+	{{- else }}
 	<meta property="og:type" content="website">
+	{{- end }}
+	<meta property="og:site_name" content="{{ site.Title }}">
 	<meta property="og:title" content="{{ site.Title }}">
 	<meta property="og:description" content="{{ .Title }}">
 	<meta property="og:url" content="{{ .Permalink }}">
