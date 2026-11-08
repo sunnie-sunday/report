@@ -6,6 +6,7 @@ date: 2026-09-27
 Last 2 characters found after porting all my scripts to a Dalamud plugin:
 
 {{< character "47278065" >}}
+
 {{< character "60685755" >}}
 
 EchoVault published a backend update on **2026-09-18** and the `HTTP 409`

@@ -4,6 +4,7 @@ date: 2026-08-23
 ---
 
 {{< character "11539517" >}}
+
 {{< character "59825183" >}}
 
 Someone from /xivg/ asked me to audit **Schizo Gangstalker** after they posted a
