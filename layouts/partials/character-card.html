@@ -33,14 +33,12 @@
 				{{ with $char.Params.seen }}
 				{{ $parts := split . "-" }}
 				{{ $short := strings.TrimSpace (index $parts (sub (len $parts) 1)) }}
-				<tr><th>Seen</th><td><span class="seen-full">{{ . }}</span><span class="seen-short">{{ $short }}</span></td></tr>
-				{{ end }}
-				{{ with $char.Params.transfers }}
-				<tr><th>Transfers</th><td>{{ delimit (sort (slice | append .)) ", " }}</td></tr>
+				<tr><th>Location seen</th><td><span class="seen-full">{{ . }}</span><span class="seen-short">{{ $short }}</span></td></tr>
 				{{ end }}
 				{{ with $char.Params.utc }}
-				<tr><th>Added</th><td><time class="local-time" datetime="{{ . }}">{{ . }}</time></td></tr>
+				<tr><th>Time seen</th><td><time class="local-time" datetime="{{ . }}">{{ . }}</time></td></tr>
 				{{ end }}
+				<tr class="spacer"><td colspan="2"></td></tr>
 				{{ with $char.Title }}
 				<tr><th>Title</th><td>{{ . }}</td></tr>
 				{{ end }}
@@ -57,8 +55,14 @@
 				{{ with $char.Params.fc_lodestone_id }}
 				<tr><th>FC Lodestone</th><td><a href="https://na.finalfantasyxiv.com/lodestone/freecompany/{{ . }}/" target="_blank" rel="noopener noreferrer"><span class="url-full">https://na.finalfantasyxiv.com/lodestone/freecompany/{{ . }}/</span><span class="url-id">{{ . }}</span></a></td></tr>
 				{{ end }}
+				{{ if or (isset $char.Params "aka") (isset $char.Params "transfers") }}
+				<tr class="spacer"><td colspan="2"></td></tr>
+				{{ end}}
 				{{ with $char.Params.aka }}
 				<tr><th>Also known as</th><td>{{ delimit (sort (slice | append .)) ", " }}</td></tr>
+				{{ end }}
+				{{ with $char.Params.transfers }}
+				<tr><th>Transfers</th><td>{{ delimit (sort (slice | append .)) ", " }}</td></tr>
 				{{ end }}
 			</table>
 		</footer>
