@@ -29,6 +29,12 @@
 	border-bottom: 1px dashed var(--bio-border);
 }
 
+.bio-content a {
+	color: var(--link);
+	font-weight: bold;
+	text-decoration: none;
+}
+
 .badges {
 	flex-shrink: 0;
 	max-width: 50%;

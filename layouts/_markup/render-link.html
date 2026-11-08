@@ -1,0 +1,5 @@
+{{- /* Open image links in a SweetAlert2 modal */ -}}
+{{- $ext := lower (path.Ext (urls.Parse .Destination).Path) }}
+{{- $isImage := in (slice ".png" ".jpg" ".jpeg" ".gif" ".webp" ".avif" ".svg") $ext -}}
+<a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $isImage }} onclick="if (window.Swal &amp;&amp; !(event.ctrlKey || event.metaKey || event.shiftKey)) { Swal.fire({ imageUrl: this.href, width: '40rem' }); return false; }"{{ end }}>{{ .Text }}</a>
+{{- /* Chomp trailing newline */ -}}
