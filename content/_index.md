@@ -2,17 +2,12 @@
 title: "Characters verified as EchoVault users"
 ---
 
-To be verified, the owner of that FFXIV character has to install the Echo plugin
-(successor of PlayerScope and Memoria) then add it's registration code on their
-Lodestone profile. This process isn't the same as a claim/takedown request, and
-is only required for stalkers that **contribute sightings** to EchoVault.
+Report of identified FFXIV characters that are using the Echo scoping plugin
+(successor of PlayerScope and Memoria) to **contribute sightings** to EchoVault
+as stalkers.
 
 For more information:
 
 - **Yoshi-P**'s FINAL FANTASY XIV [Forum post](https://forum.square-enix.com/ffxiv/threads/515102-Regarding-the-Use-of-Third-Party-Programs-and-Player-Safety "Regarding the Use of Third-Party Programs and Player Safety")
 - **Dalamud**'s [Blog post](https://dalamud.dev/news/2025/01/10/account-ids-and-plugins/ "Statement on Account IDs and Plugins")
 - **Echo-Unvaulted**'s [Documentation](/docs/)
-
-`2026-11-01`
-
-After auditing a total of **220752** characters, **44** users have been found:

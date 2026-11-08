@@ -27,24 +27,26 @@
 		{{ $bioID := printf "bio-%d" $n }}
 		<section class="character">
 			<div class="character-row">
-				<div class="character-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="{{ $bioID }}">
+				<div class="character-header">
 					<img class="avatar" src="{{ $char.Params.avatar_url | default $avatarDefault }}" onerror="this.onerror=null;this.src='{{ $avatarDefault }}';" alt="{{ $char.Params.name }}" width="48" height="48">
 					<span class="identity">
-						<h3 class="name">
-							{{ $char.Params.name }}
-							{{ if $char.Params.expired }}
-							<span class="badge-expired" title="This character hasn't contributed to EchoVault for over 60 days.">Expired</span>
-							{{ end }}
-						</h3>
+						<h3 class="name">{{ $char.Params.name }}</h3>
 						<span class="world">{{ $char.Params.world }}</span>
 					</span>
-					<span class="toggle-indicator" aria-hidden="true"></span>
+					<span class="badges">
+						{{- range sort (slice | append $char.Params.source) }}
+						{{- $color := index site.Params.sourceColors (lower .) }}
+						<span class="badge badge-{{ $color | default "muted" }}">{{ . }}</span>
+						{{ end }}
+					</span>
 				</div>
 			</div>
 			<div class="bio">
-				<div class="bio-content" id="{{ $bioID }}" hidden>
-					<div class="bio-text">{{ $char.Content }}</div>
+				{{ with $char.Content }}
+				<div class="bio-content">
+					<div class="bio-text">{{ . }}</div>
 				</div>
+				{{ end }}
 				<footer class="bio-footer">
 					<table>
 						{{ with $char.Params.seen }}
@@ -90,11 +92,6 @@
 						</tr>
 						{{ end }}
 						<tr class="spacer"><td colspan="2"></td></tr>
-						{{ if $char.Params.expired }}
-						<tr><th>Activity</th><td class="activity-expired">This character hasn't contributed to EchoVault for over 60 days.</td></tr>
-						{{ else }}
-						<tr><th>Activity</th><td class="activity-active">This character has contributed to EchoVault within the last 60 days.</td></tr>
-						{{ end }}
 						{{ with $char.Params.aka }}
 						<tr><th>Also known as</th><td>{{ . }}</td></tr>
 						{{ end }}
@@ -164,7 +161,6 @@
 
 {{ partial "footer.html" . }}
 
-	<script src="{{ "js/accordion.js" | relURL }}"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="{{ "js/request.js" | relURL }}"></script>
 	<script src="{{ "js/validator.js" | relURL }}"></script>
