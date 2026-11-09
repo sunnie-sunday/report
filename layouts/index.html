@@ -10,6 +10,9 @@
 		<div class="site-description">
 			<h2>{{ .Title }}</h2>
 			{{ .Content }}
+			{{- with len (site.GetPage "/characters").Pages }}
+			<p class="character-count">EchoVault contributors found: <strong>{{ lang.FormatNumber 0 . }}</strong></p>
+			{{- end }}
 		</div>
 	</header>
 
