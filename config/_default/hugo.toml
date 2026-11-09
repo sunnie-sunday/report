@@ -49,3 +49,4 @@ disableKinds = ["taxonomy", "term", "RSS"]
 [params.sourceColors]
   lodestone = "yellow"
   conflict = "cyan"
+  position = "blue"
