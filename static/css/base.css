@@ -103,24 +103,6 @@ h1, h2, h3, h4, h5, h6 {
 	color: var(--fg);
 }
 
-.site-description tt.docutils.literal {
-	padding: 0 1px;
-	font-size: 0.95em;
-	background-color: var(--code-bg, var(--border));
-	color: var(--code-fg, var(--fg));
-	font-family: 'DejaVu Mono', monospace;
-}
-
-.roster {
-	flex: 1 0 auto;
-	max-width: 40rem;
-	width: 100%;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-}
-
 .character {
 	border: 1px solid var(--border);
 	border-radius: 8px;
@@ -130,21 +112,6 @@ h1, h2, h3, h4, h5, h6 {
 .character-row {
 	display: flex;
 	align-items: center;
-}
-
-.character-toggle {
-	flex: 1;
-	min-width: 0;
-	display: flex;
-	align-items: center;
-	gap: 0.75rem;
-	padding: 0.75rem 1rem;
-	background-color: var(--card-bg);
-	cursor: pointer;
-}
-
-.character-toggle:hover {
-	background-color: var(--card-bg-hover);
 }
 
 .avatar {
@@ -172,20 +139,6 @@ h1, h2, h3, h4, h5, h6 {
 	color: var(--muted);
 }
 
-.toggle-indicator {
-	flex-shrink: 0;
-	margin-left: auto;
-	color: var(--muted);
-}
-
-.toggle-indicator::before {
-	content: "View evidence +";
-}
-
-.character-toggle[aria-expanded="true"] .toggle-indicator::before {
-	content: "View evidence \2212";
-}
-
 .bio {
 	padding: 1rem;
 	border-top: 1px solid var(--border);
@@ -193,21 +146,6 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'DejaVu Mono', monospace;
 	font-size: 0.85rem;
 	color: var(--bio-fg);
-}
-
-.bio pre {
-	margin: 0;
-	white-space: pre-wrap;
-	overflow-wrap: break-word;
-	word-break: break-word;
-	font: inherit;
-	font-size: 10px;
-}
-
-/* Desktop shows the literal block inline; mobile hides it and shows
-	 .bio-source-link instead, which opens a plain-text copy on its own. */
-.bio-source-link {
-	display: none;
 }
 
 .bio p {
@@ -249,8 +187,7 @@ h1, h2, h3, h4, h5, h6 {
 	word-break: break-all;
 }
 
-.url-id,
-.city-short {
+.url-id {
 	display: none;
 }
 
@@ -358,33 +295,15 @@ h1, h2, h3, h4, h5, h6 {
 		display: none;
 	}
 
-	.bio pre {
-		display: none;
-	}
-
 	.bio-footer th {
 		white-space: normal;
 	}
 
-	.bio-source-link {
-		display: inline-block;
-		margin-top: 0.5rem;
-		color: var(--link, var(--accent));
-		font-size: 0.8rem;
-		text-decoration: none;
-	}
-
-	.bio-source-link:hover {
-		text-decoration: underline;
-	}
-
-	.url-full,
-	.city-full {
+	.url-full {
 		display: none;
 	}
 
-	.url-id,
-	.city-short {
+	.url-id {
 		display: inline;
 	}
 }

@@ -79,10 +79,6 @@
 	margin-top: 1rem;
 }
 
-.bio-popup-trigger {
-	display: none;
-}
-
 .seen-short {
 	display: none;
 }
@@ -401,7 +397,4 @@
 	.seen-short {
 		display: inline;
 	}
-
-	.bio-text pre {
-		display: block;
 }
