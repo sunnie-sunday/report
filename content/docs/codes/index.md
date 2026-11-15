@@ -50,9 +50,10 @@ stalkers can't be identified with this alone.
 
 ![Discord announcement 2026-09-18](discord-2026-09-18.png)
 
-> The auditing method for characters on the [**Sunnie Sunday Report**](/) used
-> API exploits directly and didn't rely on **Lodestone** code. That said, adding
-> that code was the process that those leaked characters had completed.
+> The original **Conflict** auditing method for characters on the
+> [**Sunnie Sunday Report**](/) used API exploits directly and didn't rely on
+> **Lodestone** codes. That said, adding that code was the process that those
+> leaked characters had completed.
 
 ## Discovered verification codes
 
