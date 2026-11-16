@@ -1,71 +1,80 @@
 {{- /* Character card shared by the homepage and article shortcodes.
 	"compact" is just the avatar + name/world header for summaries.
-	"full" adds the evidence and the attributes table below it. */ -}}
+	"full" is the portrait with attributes and evidence. */ -}}
 {{ $char := .char }}
 {{ $avatarDefault := md5 "default" }}
+{{ $image := printf "https://img2.finalfantasyxiv.com/f/%s_%s" ($char.Params.avatar | default $avatarDefault) (md5 $char.Params.world) }}
 <section class="character"{{ with $char.Params.lodestone_id }} data-lodestone-id="{{ . }}"{{ end }}>
 	<div class="character-row">
 		<div class="character-header">
-			<img class="avatar" src="https://img2.finalfantasyxiv.com/f/{{ $char.Params.avatar | default $avatarDefault }}_{{ md5 $char.Params.world }}fc0.jpg" onerror="this.onerror=null;this.src='{{ $avatarDefault }}';" alt="{{ $char.Params.name }}" width="48" height="48" loading="lazy" decoding="async">
-			<span class="identity">
-				<h3 class="name">{{ $char.Params.name }}</h3>
-				<span class="world">{{ $char.Params.world }}</span>
-			</span>
 			{{- if eq .mode "full" }}
-			<span class="badges">
-				{{- range sort (slice | append $char.Params.source) }}
-				{{- $color := index site.Params.sourceColors (lower .) }}
-				<span class="badge badge-{{ $color | default "muted" }}">{{ . }}</span>
-				{{- end }}
+			<span class="portrait">
+				<img src="{{ $image }}fl0.jpg" onerror="this.onerror=null;this.src='{{ $avatarDefault }}';" alt="{{ $char.Params.name }}" width="880" height="1200" loading="lazy" decoding="async">
 			</span>
+			{{- else }}
+			<img class="avatar" src="{{ $image }}fc0.jpg" onerror="this.onerror=null;this.src='{{ $avatarDefault }}';" alt="{{ $char.Params.name }}" width="64" height="64" loading="lazy" decoding="async">
 			{{- end }}
+			<div class="details">
+				<div class="details-title">
+					<span class="identity">
+						<h3 class="name">{{ $char.Params.name }}</h3>
+						<span class="world">{{ $char.Params.world }}</span>
+					</span>
+					{{- if eq .mode "full" }}
+					<span class="badges">
+						{{- range sort (slice | append $char.Params.source) }}
+						{{- $color := index site.Params.sourceColors (lower .) }}
+						<span class="badge badge-{{ $color | default "muted" }}">{{ . }}</span>
+						{{- end }}
+					</span>
+					{{- end }}
+				</div>
+				{{- if eq .mode "full" }}
+				<table class="properties">
+					{{ with $char.Params.seen }}
+					{{ $parts := split . "-" }}
+					{{ $short := strings.TrimSpace (index $parts (sub (len $parts) 1)) }}
+					<tr><th>Location seen</th><td><span class="seen-full">{{ . }}</span><span class="seen-short">{{ $short }}</span></td></tr>
+					{{ end }}
+					{{ with $char.Params.utc }}
+					<tr><th>Time seen</th><td><time class="local-time" datetime="{{ . }}">{{ . }}</time></td></tr>
+					{{ end }}
+					<tr class="spacer"><td colspan="2"></td></tr>
+					{{ with $char.Title }}
+					<tr><th>Title</th><td>{{ . }}</td></tr>
+					{{ end }}
+					{{ with $char.Params.job }}
+					<tr><th>Job</th><td>{{ . }}{{ with $char.Params.level }} Lv. {{ . }}{{ end }}</td></tr>
+					{{ end }}
+					{{ with $char.Params.lodestone_id }}
+					<tr><th>Lodestone</th><td><a href="https://na.finalfantasyxiv.com/lodestone/character/{{ . }}/" target="_blank" rel="noopener noreferrer">{{ . }}</a></td></tr>
+					{{ end }}
+					{{ with $char.Params.fc_name }}
+					<tr class="spacer"><td colspan="2"></td></tr>
+					<tr><th>FC Name</th><td>{{ . }}</td></tr>
+					{{ end }}
+					{{ with $char.Params.fc_lodestone_id }}
+					<tr><th>FC Lodestone</th><td><a href="https://na.finalfantasyxiv.com/lodestone/freecompany/{{ . }}/" target="_blank" rel="noopener noreferrer">{{ . }}</a></td></tr>
+					{{ end }}
+					{{ if or (isset $char.Params "aka") (isset $char.Params "transfers") }}
+					<tr class="spacer"><td colspan="2"></td></tr>
+					{{ end}}
+					{{ with $char.Params.aka }}
+					<tr><th>Also known as</th><td>{{ range $i, $name := sort (slice | append .) }}{{ if $i }}<br>{{ end }}{{ $name }}{{ end }}</td></tr>
+					{{ end }}
+					{{ with $char.Params.transfers }}
+					<tr><th>Transfers</th><td>{{ delimit (sort (slice | append .)) ", " }}</td></tr>
+					{{ end }}
+				</table>
+				{{- end }}
+			</div>
 		</div>
 	</div>
-	{{ if eq .mode "full" }}
+	{{- if eq .mode "full" }}
+	{{- with $char.Content }}
 	<div class="bio">
-		{{ with $char.Content }}
-		<div class="bio-content">
-			<div class="bio-text">{{ . }}</div>
-		</div>
-		{{ end }}
-		<footer class="bio-footer">
-			<table>
-				{{ with $char.Params.seen }}
-				{{ $parts := split . "-" }}
-				{{ $short := strings.TrimSpace (index $parts (sub (len $parts) 1)) }}
-				<tr><th>Location seen</th><td><span class="seen-full">{{ . }}</span><span class="seen-short">{{ $short }}</span></td></tr>
-				{{ end }}
-				{{ with $char.Params.utc }}
-				<tr><th>Time seen</th><td><time class="local-time" datetime="{{ . }}">{{ . }}</time></td></tr>
-				{{ end }}
-				<tr class="spacer"><td colspan="2"></td></tr>
-				{{ with $char.Title }}
-				<tr><th>Title</th><td>{{ . }}</td></tr>
-				{{ end }}
-				{{ with $char.Params.job }}
-				<tr><th>Job</th><td>{{ . }}{{ with $char.Params.level }} Lv. {{ . }}{{ end }}</td></tr>
-				{{ end }}
-				{{ with $char.Params.lodestone_id }}
-				<tr><th>Lodestone</th><td><a href="https://na.finalfantasyxiv.com/lodestone/character/{{ . }}/" target="_blank" rel="noopener noreferrer"><span class="url-full">https://na.finalfantasyxiv.com/lodestone/character/{{ . }}/</span><span class="url-id">{{ . }}</span></a></td></tr>
-				{{ end }}
-				{{ with $char.Params.fc_name }}
-				<tr class="spacer"><td colspan="2"></td></tr>
-				<tr><th>FC Name</th><td>{{ . }}</td></tr>
-				{{ end }}
-				{{ with $char.Params.fc_lodestone_id }}
-				<tr><th>FC Lodestone</th><td><a href="https://na.finalfantasyxiv.com/lodestone/freecompany/{{ . }}/" target="_blank" rel="noopener noreferrer"><span class="url-full">https://na.finalfantasyxiv.com/lodestone/freecompany/{{ . }}/</span><span class="url-id">{{ . }}</span></a></td></tr>
-				{{ end }}
-				{{ if or (isset $char.Params "aka") (isset $char.Params "transfers") }}
-				<tr class="spacer"><td colspan="2"></td></tr>
-				{{ end}}
-				{{ with $char.Params.aka }}
-				<tr><th>Also known as</th><td>{{ delimit (sort (slice | append .)) ", " }}</td></tr>
-				{{ end }}
-				{{ with $char.Params.transfers }}
-				<tr><th>Transfers</th><td>{{ delimit (sort (slice | append .)) ", " }}</td></tr>
-				{{ end }}
-			</table>
-		</footer>
+		<div class="bio-text">{{ . }}</div>
 	</div>
-	{{ end }}
+	{{- end }}
+	{{- end }}
 </section>

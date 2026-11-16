@@ -1,5 +1,4 @@
 $content-width: 40rem;
-$radius: 8px;
 
 $font-body: 'Roboto', sans-serif;
 $font-heading: 'Roboto Condensed', sans-serif;
@@ -145,25 +144,65 @@ blockquote {
 
 .character {
 	border: 1px solid var(--border);
-	border-radius: $radius;
 	overflow: hidden;
 }
+
+$avatar-size: 64px;
+$portrait-width: 224px;
 
 .character-header {
 	display: flex;
 	align-items: center;
 	gap: 0.75rem;
-	padding: 0.75rem 1rem;
+	min-height: $avatar-size;
+	padding: 0 1rem 0 0;
 	background-color: var(--card-bg);
 }
 
 .avatar {
-	width: 48px;
-	height: 48px;
-	border-radius: 50%;
+	align-self: stretch;
+	width: $avatar-size;
+	height: auto;
 	object-fit: cover;
 	flex-shrink: 0;
 	background: var(--border);
+}
+
+.portrait {
+	position: relative;
+	flex: 0 0 $portrait-width;
+	align-self: stretch;
+	aspect-ratio: 880 / 1200;
+	background: var(--border);
+
+	@include mobile {
+		flex-basis: 7rem;
+	}
+
+	img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: top;
+	}
+}
+
+.details {
+	flex: 1;
+	min-width: 0;
+	padding: 0.75rem 0;
+
+	.portrait + & {
+		align-self: flex-start;
+	}
+}
+
+.details-title {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
 }
 
 .identity {
@@ -196,8 +235,8 @@ blockquote {
 
 .badge {
 	display: inline-block;
-	padding: 0.05em 0.5em;
-	border-radius: 999px;
+	padding: 0.1em 0.5em;
+	border-radius: 5px;
 	background: var(--bg);
 	font-size: 0.7rem;
 	font-weight: 700;
@@ -211,7 +250,6 @@ blockquote {
 
 .bio {
 	padding: 1rem;
-	border-top: 1px solid var(--border);
 	background: var(--bio-bg);
 	font-family: $font-mono;
 	font-size: 0.85rem;
@@ -224,12 +262,6 @@ blockquote {
 			margin-top: 0;
 		}
 	}
-}
-
-.bio-content {
-	margin-bottom: 0.75rem;
-	padding-bottom: 0.75rem;
-	border-bottom: 1px dashed var(--bio-border);
 
 	a {
 		color: var(--link);
@@ -251,14 +283,12 @@ blockquote {
 	}
 }
 
-.bio-footer {
-	color: var(--bio-muted);
-
-	table {
-		width: 100%;
-		border-collapse: collapse;
-		font-size: 0.7rem;
-	}
+.properties {
+	width: 100%;
+	margin-top: 0.75rem;
+	border-collapse: collapse;
+	font-family: $font-mono;
+	font-size: 0.7rem;
 
 	th,
 	td {
@@ -270,6 +300,7 @@ blockquote {
 	th {
 		padding-right: 0.75rem;
 		white-space: nowrap;
+		color: var(--muted);
 
 		@include mobile {
 			white-space: normal;
@@ -283,20 +314,6 @@ blockquote {
 
 	tr.spacer td {
 		padding: 0.75rem 0 0;
-	}
-}
-
-.url-id {
-	display: none;
-
-	@include mobile {
-		display: inline;
-	}
-}
-
-.url-full {
-	@include mobile {
-		display: none;
 	}
 }
 
@@ -339,7 +356,6 @@ blockquote {
 .review {
 	padding: 0.75rem 1rem;
 	border: 1px solid var(--border);
-	border-radius: $radius;
 	background-color: var(--card-bg);
 }
 
@@ -554,7 +570,6 @@ blockquote {
 	> pre {
 		margin: 1rem 0 0;
 		padding: 1rem;
-		border-radius: $radius;
 		overflow-x: auto;
 		background-color: var(--bio-bg);
 		color: var(--bio-fg);
@@ -645,7 +660,6 @@ blockquote {
 	pre {
 		margin: 1rem 0 0;
 		padding: 1rem;
-		border-radius: $radius;
 		overflow-x: auto;
 		color: var(--bio-fg);
 		font-family: $font-mono;
@@ -689,7 +703,6 @@ blockquote {
 	li {
 		padding: 0.75rem 1rem;
 		border: 1px solid var(--border);
-		border-radius: $radius;
 		background-color: var(--card-bg);
 	}
 
