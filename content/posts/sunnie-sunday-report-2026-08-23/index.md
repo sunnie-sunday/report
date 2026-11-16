@@ -11,6 +11,7 @@ Someone from /xivg/ asked me to audit **Schizo Gangstalker** after they posted a
 screenshot using Echo at a 4chan meetup:
 
 ![Echo plugin of Schizo Gangstalker](1786177568892.png)
+
 ![Rank of Schizo Gangstalker](1789616073598.png)
 
 {{< character "61224196" >}}

@@ -1,0 +1,12 @@
+{{- /* Standalone images get a polaroid frame captioned with their alt text */ -}}
+{{- if .IsBlock }}
+<figure class="polaroid">
+	<img src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async">
+	{{- with .Text }}
+	<figcaption>{{ . }}</figcaption>
+	{{- end }}
+</figure>
+{{- else -}}
+<img src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async">
+{{- end }}
+{{- /* Chomp trailing newline */ -}}

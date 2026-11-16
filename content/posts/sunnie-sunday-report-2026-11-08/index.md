@@ -20,6 +20,7 @@ for sharing his tools and findings.
 {{< character "38244369" >}}
 
 ![Princess Shortcake JSON](princess-shortcake-json.png)
+
 ![Princess Shortcake sighting](princess-shortcake-sighting.png)
 
 {{< character "21181174" >}}

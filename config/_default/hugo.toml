@@ -11,6 +11,10 @@ disableKinds = ["taxonomy", "term", "RSS"]
 [markup.goldmark.extensions.typographer]
   disable = true
 
+# Lets the image render hook frame standalone images as figures
+[markup.goldmark.parser]
+  wrapStandAloneImageWithinParagraph = false
+
 # Chroma syntax highlighting for docs code blocks, the stylesheet is generated
 # from this style at build time into assets/css/chroma.css
 [markup.highlight]
