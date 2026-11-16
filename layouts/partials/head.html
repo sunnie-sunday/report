@@ -52,7 +52,8 @@
 	{{- if not $chroma }}
 		{{- errorf "assets/css/chroma.css is missing: generate it with hugo gen chromastyles" }}
 	{{- end }}
-	{{- $css := slice $main $chroma | resources.Concat "css/main.css" }}
+	{{- /* Chroma first so SCSS can override generated styles. */ -}}
+	{{- $css := slice $chroma $main | resources.Concat "css/main.css" }}
 	{{- if hugo.IsProduction }}
 		{{- $css = $css | minify }}
 	{{- end }}

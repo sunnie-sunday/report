@@ -1,0 +1,5 @@
+// Ignore Chroma errors to fix the HTTP response syntax
+.chroma .err {
+	color: inherit;
+	background: none;
+}

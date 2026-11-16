@@ -15,7 +15,7 @@ disableKinds = ["taxonomy", "term", "RSS"]
 # from this style at build time into assets/css/chroma.css
 [markup.highlight]
   noClasses = false
-  style = "bw"
+  style = "monokailight"
 
 # Suppress individual character pages
 [[cascade]]
