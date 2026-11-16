@@ -3,6 +3,8 @@ sphinx-legacy/
 
 output/
 .hugo_build.lock
+resources/
+assets/css/chroma.css
 
 *.sh
 *.py

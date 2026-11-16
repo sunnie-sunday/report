@@ -47,9 +47,15 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/dejavu-mono@5.3.0/latin-700.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/dejavu-mono@5.3.0/latin-700-italic.css">
 	<!-- Styles -->
-	<link rel="stylesheet" href="{{ "css/base.css" | relURL }}">
-	<link rel="stylesheet" href="{{ "css/base-hugo.css" | relURL }}">
-	<link rel="stylesheet" href="{{ "css/chroma.css" | relURL }}">
-	<link rel="stylesheet" href="{{ "css/validator.css" | relURL }}">
-	<link rel="stylesheet" href="{{ printf "css/themes/%s.css" site.Params.colorTheme | relURL }}">
+	{{- $main := resources.Get "scss/main.scss" | css.Sass (dict "transpiler" "dartsass") }}
+	{{- $chroma := resources.Get "css/chroma.css" }}
+	{{- if not $chroma }}
+		{{- errorf "assets/css/chroma.css is missing: generate it with hugo gen chromastyles" }}
+	{{- end }}
+	{{- $css := slice $main $chroma | resources.Concat "css/main.css" }}
+	{{- if hugo.IsProduction }}
+		{{- $css = $css | minify }}
+	{{- end }}
+	{{- $css = $css | fingerprint }}
+	<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 </head>

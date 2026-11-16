@@ -27,6 +27,20 @@ jobs:
           hugo-version: '0.165.0'
           extended: true
 
+      - name: Install Dart Sass
+        run: |
+          curl -sSfL "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz" \
+            | tar -xz -C "${RUNNER_TEMP}"
+          echo "${RUNNER_TEMP}/dart-sass" >> "${GITHUB_PATH}"
+        env:
+          DART_SASS_VERSION: '1.107.1'
+
+      - name: Generate syntax highlighting styles
+        run: |
+          style=$(hugo config --format json | jq -r .markup.highlight.style)
+          mkdir -p assets/css
+          hugo gen chromastyles --style="$style" > assets/css/chroma.css
+
       - name: Build site
         run: hugo
 
