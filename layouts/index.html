@@ -105,9 +105,7 @@
 				</span>
 				<span class="review-author">
 					{{- with .Resources.Get "avatar.png" }}
-					{{- with .Fill "64x64" }}
-					<img src="{{ .RelPermalink }}" alt="" width="32" height="32" loading="lazy" decoding="async">
-					{{- end }}
+					<img src="{{ .RelPermalink }}" alt="" width="32" height="32">
 					{{- else }}
 					{{- warnf "%s has no avatar.png" .File.Path }}
 					{{- end }}
