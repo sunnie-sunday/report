@@ -380,10 +380,18 @@ $portrait-width: 224px;
 	background-color: var(--card-bg);
 }
 
+.review-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+	margin-bottom: 0.5rem;
+}
+
 .review-rating {
 	display: flex;
+	flex-shrink: 0;
 	gap: 0.15rem;
-	padding-bottom: 0.5rem;
 }
 
 .review-text {
@@ -392,8 +400,20 @@ $portrait-width: 224px;
 }
 
 .review-author {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	text-align: right;
 	color: var(--muted);
 	font-size: 0.85rem;
+
+	img {
+		flex-shrink: 0;
+		width: 32px;
+		height: 32px;
+		object-fit: cover;
+		border-radius: 50%;
+	}
 }
 
 // Footer

@@ -90,31 +90,35 @@
 	<script type="application/ld+json">{{ (dict "@context" "https://schema.org" "@type" "ItemList" "name" site.Title "itemListElement" $items) | jsonify (dict "indent" "  ") | safeJS }}</script>
 	{{- end }}
 
+	{{- /* Reviews sourced from their markdowns. */}}
+	{{- with (site.GetPage "/reviews").Pages.ByDate.Reverse }}
 	<section class="reviews">
 		<h2>Reviews</h2>
+		{{- range . }}
+		{{- $rating := .Params.rating | default 0 }}
 		<article class="review">
-			<span class="review-rating" role="img" aria-label="1 out of 5 stars">
-				<img src="{{ "images/star-filled.png" | relURL }}" alt="" width="16" height="16">
-				<img src="{{ "images/star-empty.png" | relURL }}" alt="" width="16" height="16">
-				<img src="{{ "images/star-empty.png" | relURL }}" alt="" width="16" height="16">
-				<img src="{{ "images/star-empty.png" | relURL }}" alt="" width="16" height="16">
-				<img src="{{ "images/star-empty.png" | relURL }}" alt="" width="16" height="16">
-			</span>
-			<q class="review-text">Attacker is still attacking and trying to get through even though he is too stupid to get the version number right.</q>
-			<span class="review-author">&mdash; Echo Vault Dev</span>
+			<div class="review-header">
+				<span class="review-rating" role="img" aria-label="{{ $rating }} out of 5 stars">
+					{{- range seq 5 }}
+					<img src="{{ cond (le . $rating) "images/star-filled.png" "images/star-empty.png" | relURL }}" alt="" width="16" height="16">
+					{{- end }}
+				</span>
+				<span class="review-author">
+					{{- with .Resources.Get "avatar.png" }}
+					{{- with .Fill "64x64" }}
+					<img src="{{ .RelPermalink }}" alt="" width="32" height="32" loading="lazy" decoding="async">
+					{{- end }}
+					{{- else }}
+					{{- warnf "%s has no avatar.png" .File.Path }}
+					{{- end }}
+					{{ .Params.author | default "Anon" }}
+				</span>
+			</div>
+			<q class="review-text">{{ .RenderString (strings.TrimSpace .RawContent) }}</q>
 		</article>
-		<article class="review">
-			<span class="review-rating" role="img" aria-label="1 out of 5 stars">
-				<img src="{{ "images/star-filled.png" | relURL }}" alt="" width="16" height="16">
-				<img src="{{ "images/star-empty.png" | relURL }}" alt="" width="16" height="16">
-				<img src="{{ "images/star-empty.png" | relURL }}" alt="" width="16" height="16">
-				<img src="{{ "images/star-empty.png" | relURL }}" alt="" width="16" height="16">
-				<img src="{{ "images/star-empty.png" | relURL }}" alt="" width="16" height="16">
-			</span>
-			<q class="review-text">All this effort for the identities of 10 alts who cares.</q>
-			<span class="review-author">&mdash; Anon</span>
-		</article>
+		{{- end }}
 	</section>
+	{{- end }}
 
 	{{ partial "footer.html" . }}
 

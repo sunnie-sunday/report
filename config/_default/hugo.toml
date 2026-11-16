@@ -15,8 +15,7 @@ disableKinds = ["taxonomy", "term", "RSS"]
 [markup.goldmark.parser]
   wrapStandAloneImageWithinParagraph = false
 
-# Chroma syntax highlighting for docs code blocks, the stylesheet is generated
-# from this style at build time into assets/css/chroma.css
+# Chroma syntax highlighting generated at build time
 [markup.highlight]
   noClasses = false
   style = "monokailight"
@@ -42,6 +41,23 @@ disableKinds = ["taxonomy", "term", "RSS"]
   [cascade.target]
     kind = "section"
     path = "/posts"
+
+# Suppress review pages
+[[cascade]]
+  [cascade.build]
+    render = "never"
+  [cascade.target]
+    kind = "section"
+    path = "/reviews"
+
+[[cascade]]
+  [cascade.build]
+    render = "never"
+    # Only publish the resized avatars the homepage links to
+    publishResources = false
+  [cascade.target]
+    kind = "page"
+    path = "/reviews/**"
 
 [frontmatter]
   lastmod = [":git", "date"]

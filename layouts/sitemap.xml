@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	{{- range .Pages }}
 	{{- if eq .Kind "404" }}{{ continue }}{{ end }}
-	{{- if eq .Section "characters" }}{{ continue }}{{ end }}
+	{{- if in (slice "characters" "reviews") .Section }}{{ continue }}{{ end }}
 	<url>
 		<loc>{{ .Permalink }}</loc>
 		{{- $lastmod := .Lastmod }}
 		{{- if .IsHome }}
 			{{- $characters := where (site.GetPage "characters").Pages "Params.world" "!=" nil }}
-			{{- range $characters }}
+			{{- range $characters | append (site.GetPage "reviews").Pages }}
 				{{- if .Lastmod.After $lastmod }}
 					{{- $lastmod = .Lastmod }}
 				{{- end }}
